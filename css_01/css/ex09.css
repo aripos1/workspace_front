@@ -1,0 +1,3 @@
+@charset "UTF-8";
+
+ul li, p.red, h3.red, #speed th {color: red;} 

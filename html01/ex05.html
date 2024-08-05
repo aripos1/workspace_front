@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <title> html5</title>
+    </head>
+
+    <body>
+        <h1>목차</h1>
+        <ol>
+            <li><a href=ex01.html  target=“_blank”> h1~h6 요소  </a></li> 
+            <li><a href=ex02.html  target=“_blank”> p strong blockquote q 요소</a> </li> 
+            <li><a href=ex03.html  target=“_blank”> ol ul li 요소</a></li>
+            <li><a href=ex04.html  target=“_blank”> img 요소</a></li>
+            <li><a href=ex05.html  target=“_blank”> table 요소</a></li>
+            <li><a href=ex06.html  target=“_blank”> 테이블합지기 연습문제1</a></li>
+            <li><a href=ex07.html  target=“_blank”> 테이블 예제</a></li>
+            <li><a href=ex08.html  target=“_blank”> 테이블 모든 요소 사용</a></li>
+            <li><a href=ex09.html  target=“_blank”> 테이블 합치기 연습문제1</a></li>
+            <li><a href=ex10.html  target=“_blank”> form input(text, password) button</a></li>
+            <li><a href=ex11.html  target=“_blank”> form input(checkbox, radio ) </a></li>
+            <li><a href=ex12.html  target=“_blank”> form select</a></li>
+        </ol>
+    <hr>
+
+        <h1>html 공부</h1>
+
+        <h2>table</h2> 
+        <table border="1">
+            <tr>
+                <td>순번</td>
+                <td>이름</td>
+                <td>출석</td>
+                <td>별명</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>임현성</td>
+                <td>출석</td>
+                <td>?</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>전소영</td>
+                <td>왕지각</td>
+                <td>술꾼</td>
+            </tr>
+
+        </table>
+        <br>
+        <table border="1">
+            <caption>연습문제</caption>
+           
+            <tr>
+                <td colspan="2">모집직군</td>
+                <td>모집전공</td>
+                <td>비고</td>
+            </tr>
+            <tr>
+                <td colspan="2">생산기술직</td>
+                
+                <td>화학전공</td>
+                <td rowspan="3">전공관련 자격증 우대</td>
+            </tr>
+            <tr>
+                <td>생산지원직</td>
+                <td>공무</td>
+                <td>기계,전기</td>
+                
+            </tr>
+            <tr>
+                <td>생산지원직</td>
+                <td>안전환경</td>
+                <td>안전,환경</td>
+               
+            </tr>
+            <tr>
+                <td colspan="2">연구개발직</td>
+              
+                <td>화학,화학공학</td>
+                <td>석사</td>
+            </tr>
+
+        </table>
+
+        <br>
+        <table border="1">
+            <colgroup>
+            <col span="2" style="background-color: silver" >
+            <col style= "width: 200px;";>
+            <col style= "width: 200px;";>
+            <col style= "width: 200px;";>
+           
+         
+            </colgroup>
+
+            <caption><strong>모집분야</strong></caption>
+            
+            <thead style="background-color: gray;">
+                <tr>
+                    <th colspan="2">모집직군</th>
+                    <th>모집전공</th>
+                    <th>비고</th>
+                    <th>근무지</th>
+                </tr>
+            </thead>
+            <tbody align="center" >
+                <tr>
+                    <td colspan="2">생산기술직</td>
+                    <td>화학전공</td>
+                    <td rowspan="3">전공관련 자격증 우대</td>
+                    <td rowspan="5">충남 서산</td>
+                </tr>
+                
+                <tr>
+                    <td>생산지원직</td>
+                    <td>공무</td>
+                    <td>기계,전기</td>
+                </tr>
+            
+                <tr>
+                    <td>생산지원직</td>
+                    <td>안전환경</td>
+                    <td>안전,환경</td>
+                </tr>
+            
+                <tr>
+                    <td colspan="2">연구개발직</td>
+                    <td>화학,화학공학</td>
+                    <td>석사</td>
+                </tr>
+           
+                <tr>
+                    <td colspan="2">경영지원직</td>
+                    <td>상경계열</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td colspan="2">영업마케팅팀</td>
+                    <td>상경계열</td>
+                    <td></td>
+                    <td>서울 중구</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+    </body>
+
+</html>

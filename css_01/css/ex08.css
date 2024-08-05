@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+
+/* 스타일시트 연습 */
+
+
+body>ul{color: red;}
+body ul{color: blue;}
