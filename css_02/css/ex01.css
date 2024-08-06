@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.box-red{
+    background-color: red;
+    width: 10%;
+    height: 600px;
+}
+
+.box-blue{
+    background-color: blue;
+    width: 500px;
+    height: 80px;
+}
+
+.span-red{
+    display: inline-block;
+    width: 200px;
+    height: 80px;
+    background-color: red;
+ }
+
+ .img{width: 500px;}
+
+
+ 

@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+/* a[target = _self]{color: red;} */
+a[target]{background-color: cadetblue;}
+#title{color: red;}
+/* h2[id ="title"]{color: red;}  ID가 있는데 구지 이렇게 만들필요 없음*/ 
