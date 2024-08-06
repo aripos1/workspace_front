@@ -1,11 +1,17 @@
 @charset "UTF-8";
 
-* {font-family: "고딕";
-font-size: 17px;}
+*{
+  font-family: "고딕";
+  font-size: 17px;
+}
 
 
-h2{font-size: 25px;}
-h3{font-size: 20px;}
+h2{
+  font-size: 25px;
+}
+h3{
+  font-size: 20px;
+}
 
 h1{
   font-family: "궁서";
@@ -13,19 +19,63 @@ h1{
   letter-spacing: 15px;
 }
 
-ol{list-style-type: none;}
-.box{ border: 1px solid black }
-.gray{background-color: #d9d9d9;}
+ol{
+  list-style-type: none;
+}
+ul{
+  list-style-type: square;
+}
+thead{
+  background-color: #c8ebfa;
+}
 
+a:link{
+  color: black; text-decoration: none;
+}
+a:visited{
+  color: black;
+}
+a:hover{
+  color: #00f;text-decoration: underline;
+}
+a:active{
+  color: blue;text-decoration: underline
+} 
 
-.italic{font-style: italic;}
-.bold{font-weight: bold;}
-.font-red{color: #ff0000;}
-.font-blue{color: #00f;}
-.font-green{color: #00ff00;}
+.txtb::before{
+  content: "약 ";
+}
+.txtaf::after{
+  content: " (MB/초)";
+}
+.txt-right{
+  text-align: right;
+}
+.box{
+  border: 1px solid black 
+}
+.gray{
+  background-color: #d9d9d9;
+}
+.italic{
+  font-style: italic;
+}
+.bold{
+  font-weight: bold;
+}
+.font-red{
+  color: #ff0000;
+}
+.font-blue{
+  color: #00f;
+}
+.font-green{
+  color: #00ff00;
+}
+.unline{
+  text-decoration-line: underline;
+}
 
-.unline{text-decoration-line: underline;}
-
-.ind{text-indent: 30px};
-
-
+.ind{
+  text-indent: 30px
+};
