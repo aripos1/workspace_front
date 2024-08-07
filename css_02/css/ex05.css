@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.round-all{
+
+    width: 400px;
+
+    border: 4px solid black;
+    border-radius: 30px;
+}
+
+.round-each{
+
+    width: 400px;
+
+    border: 4px solid black;
+    border-top-left-radius: 30px;
+
+}
