@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+/* 기본 요소 초기화 */
+body, div, p, dl, dt, ol, ul, li,
+h1, h2, h3, h4, h5, h6, 
+form, input, select, textarea, button,
+fieldset, legend,  
+table, thead, tbody, tfoot, tr, th, td,   
+header, footer, main, nav, section, article, aside {
+    margin: 0;
+    padding: 0;
+}
+ul>li, ol>li{
+    list-style-type: none;
+}
+.clearfix{zoom: 1;}
+.clearfix::before,.clearfix::after{
+    display: block;
+    content: "";
+    line-height: 0;
+}
+.clearfix::after{clear: both;}
+
+
+
+
+body{
+    font-family: "맑은 고딕";
+    font-size: 12px;
+    background-color: gray;
+}
+
+
+
+.content{
+    width: 700px;
+    background-color: white;
+}
+
+
+.content h3{
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.content ol{
+    padding: 10px 2px;
+}
+
+.content ol>li{
+    float: left;
+}
+
+.content ol>li:not(:last-child)::after{
+    content: ">";
+}
+
+
+.content .form-group{
+    margin: 10px 0px;
+}
+
+.content .form-group .form-text{
+    display: inline-block;
+    width: 80px;
+    text-align: left;
+}
+
+
+.content .form-group #sel-bo{
+    width: 200px;
+}
+
+
+.content .form-group #txt-title{
+    width: 600px;
+}
+
+.content .form-group #txt-pw{
+    width: 197px;
+}
+
+
+
+.content .form-group input[name=scope]{
+    margin-right: 10px;
+    
+}
+
+.content .form-group input[type=checkbox]{
+    margin-right: 10px;
+}
+
+.content .form-group textarea{
+    width: 686px;
+    height: 80px;
+ }
+ 
+ .content .form-group button{
+    width: 60px;
+    height: 30px;
+}
+
+.content .line{
+    width: 100%;
+    border: 1px solid black;
+}
+
+.content .btn-area{
+    padding: 20px 0px ;
+    text-align: center;
+
+}

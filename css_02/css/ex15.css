@@ -7,7 +7,7 @@ ol>li{
     
 }
 
-ol>li:nth-child(-n+3)::after{ 
+ol>li:not(:last-child)::after{ 
  content: ">";
  margin-left: 10px;
 }

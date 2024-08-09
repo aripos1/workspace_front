@@ -11,11 +11,9 @@ thead>tr{
     background-color: #dddddd;
 }
 
-
-
 tbody>tr{
     border-bottom: 2px dotted gray;
-}   
+}
 tr:last-child{
     border-bottom: 2px solid gray;
 }
@@ -31,5 +29,4 @@ tbody>tr:hover{
 .font{
     text-decoration: underline;
     color: blue;
-    
 }

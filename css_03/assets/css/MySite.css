@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+#wrap{
+    width: 1000px;
+    margin: 0px auto;
+}
+
+#header{
+    padding: 5px 0px;
+    border-bottom: 2px solid grey;
+}
+
+#nav {
+    border-bottom: 2px solid grey;
+}
+
+#contents{
+    border-bottom: 2px solid grey;
+    padding: 30px;
+}
+
+#footer{
+    background-color: rgb(209, 244, 255);
+    text-align: center;
+    padding: 15px;
+}
+
+/* header */
+#header h1{ 
+    float: left;
+    font-size: 35px;
+    color:#75b30b;
+    font-weight: bold;
+}
+
+#header ul{
+    float: right;
+    padding: 5px 0px;
+}
+
+#header ul>li {
+    float: left;
+    padding: 3px 5px;
+    background-color: white;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+/* nav */
+#nav ul {
+    padding: 15px 0px;
+}
+
+#nav ul li{
+    float: left;
+    width: 250px;
+    box-sizing: border-box;
+    
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* contents*/
+
+
+#contents #profile{
+    float: left;
+    width: 250px;
+ 
+}
+
+#contents #greeting-box{
+    width:690px;
+    float: left;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    font-size: 17px;
+}
+
+#contents #greeting-box :first-child{
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+
+#contents #greeting-box a{
+    font-weight: bold;
+}
+
+/* footer */
+#footer p{
+    font-size: 12px;
+}

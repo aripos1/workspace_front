@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+/* 기본 요소 초기화 */
+body, div, p, dl, dt, ol, ul, li,
+h1, h2, h3, h4, h5, h6, 
+form, input, select, textarea, button,
+fieldset, legend,  
+table, thead, tbody, tfoot, tr, th, td,   
+header, footer, main, nav, section, article, aside {
+    margin: 0;
+    padding: 0;
+}
+ul>li, ol>li{
+    list-style-type: none;
+}
+.clearfix{zoom: 1;}
+.clearfix::before,.clearfix::after{
+    display: block;
+    content: "";
+    line-height: 0;
+}
+.clearfix::after{clear: both;}
+
+body{
+    background-color: gray;
+    font-family: "맑은 고딕";
+    font-size: 12px;
+}
+
+h3{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.contents ol{
+    padding: 10px 2px;
+}
+
+.contents ol>li{
+    float: left;
+}
+
+.contents ol>li:not(:last-child)::after{
+    content: ">";
+}
+
+.contents{
+    width: 600px;
+    background-color: white;
+}
+
+.form-group{
+   margin: 10px 0px;
+   border-bottom: 1px solid black;
+   padding: 5px;
+}
+
+.txt-group{
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.form-address{
+    margin: 10px 0px;
+}
+
+.contents .form-group input,select,textarea{
+    font-size: 15px;
+    font-family: "맑은 고딕";
+}
+
+
+.contents .form-group .address-group{
+    margin-bottom: 5px;
+    
+}
+
+.contents .form-group .address-group button[type=button]{
+    width: 120px;
+}
+
+
+.contents .form-group input[id=address2]{
+    width: 450px;
+}
+
+
+
+.contents .label-group .form-group label {
+    font-size: 15px;
+   
+}
+
+.contents .label-group .form-group input[type=radio]{
+    margin-right: 10px;
+}
+
+.contents .label-group .form-group input[type=checkbox]{
+    margin-right: 10px;
+}
+
+
+.contents .form-group .txt-self{
+vertical-align: top;
+}
+.contents .form-group textarea{
+width: 450px;
+height: 100px;
+}
+
+.contents .btn-area{
+    padding: 20px 0px ;
+    text-align: center;
+
+}
+.contents .btn-area button{
+    width: 120px;
+    padding: 10px 0px; 
+}

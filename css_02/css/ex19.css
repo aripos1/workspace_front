@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+/* 기본 요소 초기화 */
+/* body, div, p, dl, dt, ol, ul, li,
+h1, h2, h3, h4, h5, h6, 
+form, input, select, textarea, button,
+fieldset, legend,  
+table, thead, tbody, tfoot, tr, th, td,   
+header, footer, main, nav, section, article, aside {
+    margin: 0;
+    padding: 0;
+}
+ul>li, ol>li{
+    list-style-type: none;
+}
+.cleafix{zoom: 1;}
+.clearfix::before,.clearfix::after{
+    display: block;
+    content: "";
+    line-height: 0;
+}
+.cleafix::after{clear: both;} */
+/* ------------------------------------- */
+
+
+.box-gray{
+    width: 700px;
+    background-color: gray;
+    padding: 5px;
+    overflow: hidden;
+ 
+}
+
+.box-blue{
+    width: 200px;
+    background-color: blue;
+    float:left;
+}
+
+.box-green{
+    width: 200px;
+    background-color: green;
+    float:left;
+
+}
+.box-red{
+    width: 880px;
+    height: 30px;
+    background-color: red;
+
+}
+
+.clear{
+    clear: both;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판</title>
+    <link rel="stylesheet" href="./css/ex18-board.css">
+</head>
+
+<body>
+    <div class="content">
+        <h3>일반게시판</h3>
+      
+            <ol class="clearfix">
+                <li>홈</li>
+                <li>게시판</li>
+                <li>일반게시판</li>
+            </ol>
+ 
+        <div class="form-group">
+            <label class="form-text" for="sel-bo">게시판선택</label> 
+            <select id="sel-bo">
+                <option> 선택해주세요</option>
+                <option> 공지사항</option>
+                <option> 가입인사</option>
+                <option> 유머게시판</option>
+                <option> 기타게시판</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label class="form-text" for="txt-title">제목 </label>
+            <input type="text" id="txt-title" name="" placeholder="제목을 입력해주세요">
+        </div>
+        
+        <div class="form-group">
+            <label class="form-text" for="txt-pw">비밀번호</label>
+            <input type="password" id="txt-pw" name="" placeholder="비밀번호를 입력해주세요">
+        </div>
+
+        <div class="form-group">
+            <span class="form-text">공개범위</span>
+            <label for="rdo-me">본인</label> 
+            <input type="radio" id="rdo-me" name="scope">
+            <label for="rdo-login">로그인회원</label>
+            <input type="radio" id="rdo-login" name="scope"> 
+            <label for="rdo-fr">친구</label> 
+            <input type="radio"id="rdo-fr" name="scope"> 
+            <label for="rdo-all">전체</label> 
+            <input type="radio"id="rdo-all" name="scope"> 
+        </div>
+        <div class="form-group">
+            <span class="form-text">허용범위</span>
+                <label for="ch-commnet">댓글허용</label>
+                <input type="checkbox" id="ch-commnet">
+                <label for="ch-reply">답글허용</label>
+                <input type="checkbox" id="ch-reply">
+                <label for="ch-like"> 좋아요허용</label>
+                <input type="checkbox" id="ch-like">
+        </div>
+
+        <div class="form-group">
+            <textarea id="txt-box"></textarea>
+        </div>
+
+        <div class="form-group">
+            <span class="form-text">첨부파일</span>
+            <input type="file"></input>
+        </div>
+        
+        <div class="line">      
+        </div>  
+        
+        <div class="btn-area">
+        <button  >
+            등록
+        </button>
+        <button >
+            초기화
+        </button>
+        </div>
+
+    </div>
+</body>
+</html>
