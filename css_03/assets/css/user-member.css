@@ -1,0 +1,115 @@
+.login-box{
+    float: left;
+    width: 500px;
+    border: 1px solid black;
+    margin: 30px 150px;
+    padding: 40px 20px;
+    
+}
+
+.login-box .login-idbox{
+    float: left;
+    width: 70px;    
+    margin-left: 50px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.login-box #login-id{
+    float: left;
+    width: 200px;    
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.login-box .Double-btn{
+    float: left;
+    margin-right: 90px;
+    margin-bottom: 20px;
+}
+
+
+
+.login-box .login-pwbox{
+    float: left;
+    width: 70px;    
+    margin-left: 50px;
+    margin-bottom: 20px;
+    margin-right: 5px;
+    text-align: right;
+}
+
+.login-box #login-pw{
+    float: left;
+    width: 200px;
+    margin-right: 100px;
+    margin-bottom: 20px;
+}
+
+.login-box .login-btn {
+    float: left;
+    width: 100px;
+    margin: 30px 200px 20px 200px;
+}
+
+.login-box .login-namebox{
+    float: left;
+    width: 70px;    
+    margin-left: 50px;
+    margin-bottom: 20px;
+    margin-right: 5px;
+    text-align: right;
+}
+
+.login-box  #login-name{
+    float: left;
+    width: 200px;
+    margin-right: 100px;
+    margin-bottom: 20px;
+}
+
+
+.gender-box .txt-gender{
+    float: left;
+    width: 70px;    
+    margin-left: 50px;
+    margin-bottom: 20px;
+    margin-right: 5px;
+    text-align: right;
+}
+
+.gender-box label,.gender-box input{
+    float: left;
+    margin-left: 10px;
+  
+}
+.gender-box input{
+    margin-top: 5px;
+}
+
+.login-box .terms-box{
+    float: left;
+    margin-left: 50px;
+    margin-right: 160px;
+    margin-bottom: 50px;
+
+}
+.terms-box .txt-terms{
+    float:left;
+    width: 70px;
+    margin: 5px;
+    text-align: right;
+}
+.terms-box input[type=checkbox], .terms-box span{
+    margin-top: 8px;
+}
+
+
+.member-btn{
+    width: 100px;
+    height: 30px;
+    float: left;
+    margin-left: 200px
+    
+}

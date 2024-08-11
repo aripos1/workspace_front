@@ -93,3 +93,64 @@
 #footer p{
     font-size: 12px;
 }
+
+
+#contents-group{
+    height: auto;
+
+}
+
+#contents-group #aside{
+    float: left;
+    width: 160px;
+    padding: 10px;
+ 
+}
+
+#aside h2{
+    width: 100%;
+    height: 60px;
+    background-color: gray;
+    text-align: center;
+    line-height: 60px;
+}
+
+#aside ul li{
+    padding: 8px 0px 8px 10px;
+    border: 1px solid black;
+    margin: 5px 0px;
+}
+
+#contents-group #main{
+    float: left;
+    width: 820px;
+
+}
+
+#title-box{
+    float: left;
+    width: 820px;
+    height: 35px;
+    padding-top: 30px;
+    border-bottom: 2px solid gray;
+}
+
+#title-box h3{
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+  
+}
+#title-box ol{
+    float: right;
+   }
+#title-box li{
+    padding-top: 5px;
+ float: left;
+ font-size: 12px;
+}
+
+#title-box li:not(:last-child)::after{
+    content: ">";
+   }
+

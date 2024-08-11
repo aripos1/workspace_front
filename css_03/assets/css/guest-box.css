@@ -1,0 +1,55 @@
+.guest-box{
+    float: left;
+    margin: 20px 0px;
+    width: 820px;
+   
+}
+
+
+table{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+td{
+    
+    border: 1px solid gray;
+}
+
+.guest-table {
+    margin-bottom: 40px;
+}
+.guest-table td{
+   text-align: center;
+}
+
+
+.guest-table input{
+    width: 98%;
+    margin: 1px;
+
+}
+
+
+.guest-table textarea{
+    margin: 2px;
+    width: 99%;
+    height: 200px;
+    border: 1px solid gray;
+}
+
+.guest-table button{
+    width: 100px;
+    height: 30px;
+    margin: 3px;
+}
+
+.guest-box1{
+    float: left;
+    height: 100px;
+}
+
+.guest-box1 td{
+
+    padding: 10px;
+}
