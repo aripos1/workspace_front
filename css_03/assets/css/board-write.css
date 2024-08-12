@@ -1,0 +1,31 @@
+.write-box{
+    padding: 20px 0px 10px 23px;
+    float: left;
+    width: 800px;
+ 
+  
+}
+
+.write-box span{
+    float: left;
+    width: 70px;
+}
+
+#title-input{
+    width: 723px;
+}
+
+textarea{
+    width: 820px;
+    height: 400px;
+
+}
+.write-button{
+    float: left;
+    width: 820px;
+    margin: 15px 80% 30px;
+}
+
+.write-button button[type=submit],.write-button button[type=button]{
+    width: 70px;
+}

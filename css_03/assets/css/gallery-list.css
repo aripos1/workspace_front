@@ -1,0 +1,36 @@
+button{
+    float: left;
+    margin: 20px 0px 20px 715px;
+}
+
+
+
+table{
+    width: 820px;
+    margin-bottom: 40px;
+}
+
+
+td{
+   
+    border-right : 1px solid gray;
+    border-left : 1px solid gray;
+}
+.img-box{
+    border-top: 1px solid gray;
+}
+
+.img-box1{
+    border-bottom: 1px solid gray;
+  
+}
+.img-box1 td{
+  
+  padding: 3px;
+}
+
+
+img{
+    width: 98%;
+    margin: 3px;
+}

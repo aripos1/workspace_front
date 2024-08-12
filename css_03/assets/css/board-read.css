@@ -1,0 +1,37 @@
+.read-box{
+    float: left;
+    margin: 20px 0px;
+    border-bottom: 1px solid black;
+}
+
+table{
+
+    width: 820px;
+    margin-bottom: 20px;
+}
+
+td:first-child{
+    width: 10%;
+    padding: 5px;
+}
+td:last-child{
+    font-weight: bold;
+}
+
+.read-content{
+    float: left;
+    width: 800px;
+    padding: 20px 10px;
+    border-bottom: 1px solid gray;
+}
+
+.read-button{
+    float: left;
+    width: 820px;
+    margin: 15px 80% 30px;
+}
+
+.read-button button[type=button]{
+    width: 70px;
+
+}
