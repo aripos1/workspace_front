@@ -90,8 +90,8 @@ tbody tr{
     text-align: center;
     box-sizing: border-box;
 }
-#num-box ol{
- 
+#num-box li:hover {
+    font-weight: bold;
 }
 
 
