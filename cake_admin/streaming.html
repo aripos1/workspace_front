@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실시간 스트리밍 페이지</title>
+    <link rel="stylesheet" href="streaming_styles.css">
+</head>
+<body>
+    <header>
+        <h1>실시간 케이크 제작 스트리밍</h1>
+        <nav>
+            <a href="main.html">메인 페이지</a>
+            <a href="dashboard.html">주문 관리</a>
+            <a href="product_list.html">상품 목록</a>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="streaming-section">
+            <div class="streaming-info">
+                <h2>현재 제작 중인 케이크</h2>
+                <p>상품명: <span id="product-name">초콜릿 케이크</span></p>
+                <p>옵션: <span id="product-options">6호, 초콜릿 시트, 생크림</span></p>
+            </div>
+            <div class="streaming-video">
+                <h3>실시간 영상</h3>
+                <video id="liveStream" controls autoplay></video>
+            </div>
+            <div class="chat-section">
+                <h3>실시간 소통</h3>
+                <div class="chat-box" id="chatBox">
+                    <!-- 채팅 메시지들이 여기에 표시됩니다. -->
+                </div>
+                <input type="text" id="chatInput" placeholder="메시지를 입력하세요">
+                <button onclick="sendMessage()">전송</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>케이크 사이트 &copy; 2024. 모든 권리 보유.</p>
+    </footer>
+
+    <script>
+        function sendMessage() {
+            const chatBox = document.getElementById('chatBox');
+            const chatInput = document.getElementById('chatInput');
+            const message = chatInput.value;
+
+            if (message.trim() !== '') {
+                const newMessage = document.createElement('div');
+                newMessage.className = 'chat-message';
+                newMessage.textContent = `업체: ${message}`;
+                chatBox.appendChild(newMessage);
+                chatInput.value = '';
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문 목록 페이지</title>
+    <link rel="stylesheet" href="order_list_styles.css">
+</head>
+<body>
+    <header>
+        <h1>주문 목록 페이지</h1>
+        <nav>
+            <a href="main.html">대시보드</a>
+            <a href="order_detail.html">주문 상세 보기</a>
+            <a href="instagram_style.html">업체 홍보 페이지</a>
+            <a href="">도안 관리</a>
+            <a href="">리뷰 관리</a>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="order-list">
+            <h2>주문 내역</h2>
+            <div class="filter-section">
+                <label for="order-status-filter">상태별 보기:</label>
+                <select id="order-status-filter" onchange="filterOrders()">
+                    <option value="all">전체</option>
+                    <option value="주문 완료">주문 완료</option>
+                    <option value="제작 중">제작 중</option>
+                    <option value="결제 완료">결제 완료</option>
+                    <option value="배송 완료">배송 완료</option>
+                    <option value="픽업 완료">픽업 완료</option>
+                </select>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>주문 번호</th>
+                        <th>고객명</th>
+                        <th>고객 아이디</th>
+                        <th>상품명</th>
+                        <th>주문 날짜</th>
+                        <th>상태</th>
+                        <th>상세 보기</th>
+                    </tr>
+                </thead>
+                <tbody id="order-list-body">
+                    <tr data-status="제작 중">
+                        <td>1001</td>
+                        <td>김철수</td>
+                        <td>user123</td>
+                        <td>초콜릿 케이크</td>
+                        <td>2024-11-10</td>
+                        <td>제작 중</td>
+                        <td><a href="order_detail.html">보기</a></td>
+                    </tr>
+                    <tr data-status="배송 완료">
+                        <td>1000</td>
+                        <td>이영희</td>
+                        <td>user456</td>
+                        <td>딸기 케이크</td>
+                        <td>2024-10-05</td>
+                        <td>배송 완료</td>
+                        <td><a href="order_detail.html">보기</a></td>
+                    </tr>
+                    <tr data-status="주문 완료">
+                        <td>1002</td>
+                        <td>박민수</td>
+                        <td>user789</td>
+                        <td>바닐라 케이크</td>
+                        <td>2024-11-12</td>
+                        <td>주문 완료</td>
+                        <td><a href="order_detail.html">보기</a></td>
+                    </tr>
+                    <tr data-status="결제 완료">
+                        <td>1003</td>
+                        <td>최영수</td>
+                        <td>user234</td>
+                        <td>초코 무스 케이크</td>
+                        <td>2024-11-13</td>
+                        <td>결제 완료</td>
+                        <td><a href="order_detail.html">보기</a></td>
+                    </tr>
+                    <tr data-status="픽업 완료">
+                        <td>1004</td>
+                        <td>홍길동</td>
+                        <td>user567</td>
+                        <td>레몬 케이크</td>
+                        <td>2024-11-14</td>
+                        <td>픽업 완료</td>
+                        <td><a href="order_detail.html">보기</a></td>
+                    </tr>
+                    <!-- 추가 주문 내역 -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>케이크 사이트 &copy; 2024. 모든 권리 보유.</p>
+    </footer>
+
+    <script>
+        function filterOrders() {
+            const filterValue = document.getElementById('order-status-filter').value;
+            const orders = document.querySelectorAll('#order-list-body tr');
+            
+            orders.forEach(order => {
+                if (filterValue === 'all' || order.dataset.status === filterValue) {
+                    order.style.display = '';
+                } else {
+                    order.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

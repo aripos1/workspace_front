@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 및 업체 목록</title>
+    <link rel="stylesheet" href="member_vendor_styles.css">
+</head>
+<body>
+    <header>
+        <h1>회원 및 업체 목록 관리</h1>
+        <nav class="navigation">
+            <a href="admin_dashboard.html">대시보드</a>
+            <a href="logout.html">로그아웃</a>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="tabs">
+            <button class="tab-button active" onclick="openTab('user-list')">회원 목록</button>
+            <button class="tab-button" onclick="openTab('vendor-list')">업체 목록</button>
+        </section>
+        <section id="user-list" class="tab-content active">
+            <h2>회원 목록</h2>
+            <table class="list-table">
+                <thead>
+                    <tr>
+                        <th>회원 ID</th>
+                        <th>이름</th>
+                        <th>이메일</th>
+                        <th>연락처</th>
+                        <th>주소</th>
+                        <th>가입일</th>
+                        <th>상태</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>user001</td>
+                        <td>홍길동</td>
+                        <td>hong@example.com</td>
+                        <td>010-1234-5678</td>
+                        <td>서울특별시 강남구</td>
+                        <td>2024-01-15</td>
+                        <td>활성</td>
+                    </tr>
+                    <tr>
+                        <td>user002</td>
+                        <td>김철수</td>
+                        <td>kim@example.com</td>
+                        <td>010-8765-4321</td>
+                        <td>부산광역시 해운대구</td>
+                        <td>2024-02-20</td>
+                        <td>비활성</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="vendor-list" class="tab-content">
+            <h2>업체 목록</h2>
+            <table class="list-table">
+                <thead>
+                    <tr>
+                        <th>업체 ID</th>
+                        <th>업체명</th>
+                        <th>담당자</th>
+                        <th>연락처</th>
+                        <th>주소</th>
+                        <th>상태</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>vendor001</td>
+                        <td>케이크하우스</td>
+                        <td>이영희</td>
+                        <td>010-1234-5678</td>
+                        <td>서울특별시 종로구</td>
+                        <td>활성</td>
+                    </tr>
+                    <tr>
+                        <td>vendor002</td>
+                        <td>베이킹스튜디오</td>
+                        <td>박민수</td>
+                        <td>010-8765-4321</td>
+                        <td>경기도 성남시</td>
+                        <td>비활성</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>케이크 사이트 &copy; 2024. 모든 권리 보유.</p>
+    </footer>
+    <script>
+        function openTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-button');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

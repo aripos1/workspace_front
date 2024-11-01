@@ -1,0 +1,148 @@
+/* 공통적으로 사용하는 스타일 */
+
+/* 기본 설정 */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
+}
+
+/* 공통 컨테이너 스타일 */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 버튼 기본 스타일 */
+button {
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* 공통 그림자 효과 */
+.box-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 공통적인 텍스트 스타일 */
+.text-center {
+  text-align: center;
+}
+.font-bold {
+  font-weight: bold;
+}
+
+/* 헤더 스타일 */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* 네비게이션 스타일 */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #f44336;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ddd;
+}
+
+/* 섹션 기본 스타일 */
+section {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+/* 아티클 스타일 */
+article {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+/* 이미지 아이템 스타일 */
+.image-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.image-item:hover {
+  transform: scale(1.05);
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* 텍스트 배경 스타일 */
+.text-overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* 공통적인 플렉스 컨테이너 스타일 */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 배너 스타일 */
+.notification-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  position: relative;
+}
+
+.notification-banner button {
+  background: transparent;
+  color: #fff;
+  position: absolute;
+  left: 10px;
+  font-size: 18px;
+}
+
+/* 푸터 스타일 */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}

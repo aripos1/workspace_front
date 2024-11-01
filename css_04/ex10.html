@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feeling Hungry?</title>
+    <link rel="stylesheet" href="ex10.css">
+</head>
+<body>
+    <!-- 상단 알림 배너 -->
+    <div class="notification-banner">
+        <button onclick="this.parentElement.style.display='none';">&times;</button>
+        새롭게 홈페이지를 오픈하였습니다!
+    </div>
+
+    <!-- Feeling Hungry 텍스트 -->
+    <div class="feeling-hungry">
+        <span>Feeling Hungry?</span>
+    </div>
+
+    <!-- 메뉴 탭 -->
+    <div class="menu-tabs">
+        <button class="active">MENU</button>
+        <button>Set</button>
+        <button>Main</button>
+        <button>Noodle</button>
+        <button>Side</button>
+        <button>Beverage</button>
+    </div>
+
+    <!-- 음식 이미지 그리드 -->
+    <div class="container">
+        <div class="food-grid">
+            <div class="food-item">
+                <img src="images/odeng.jpg" alt="오뎅">
+                <div class="food-name">오뎅</div>
+            </div>
+            <div class="food-item">
+                <img src="images/tempura.jpg" alt="튀김">
+                <div class="food-name">튀김</div>
+            </div>
+            <div class="food-item">
+                <img src="images/gimbap.jpg" alt="김밥">
+                <div class="food-name">김밥</div>
+            </div>
+            <div class="food-item">
+                <img src="images/udon.jpg" alt="우동">
+                <div class="food-name">우동</div>
+            </div>
+            <div class="food-item">
+                <img src="images/corndog.jpg" alt="핫도그">
+                <div class="food-name">핫도그</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 화살표 네비게이션 -->
+    <div class="nav-arrows">
+        <button>&larr;</button>
+        <button>&rarr;</button>
+    </div>
+
+    <!-- 이벤트 섹션 -->
+    <div class="event-section">
+        <div class="event-header">EVENT<span class="event-dot">&#8226;</span></div>
+        <div class="event-subtitle">맛과 즐거움이 만나는 특별한 이벤트</div>
+        <div class="event-grid">
+            <div class="event-item">
+                <img src="images/event1.jpg" alt="신규 가맹점 이벤트">
+                <div class="event-title">Event</div>
+                <div class="event-description">샤이닝 푸드 신규 가맹점을 대상으로 이벤트를 진행합니다...</div>
+            </div>
+            <div class="event-item">
+                <img src="images/event2.jpg" alt="오픈 기념 이벤트">
+                <div class="event-title">Event</div>
+                <div class="event-description">홈페이지 오픈 기념 이벤트를 진행합니다 단품...</div>
+            </div>
+            <div class="event-item">
+                <img src="images/event3.jpg" alt="홈페이지 오픈 축하">
+                <div class="event-title">Event</div>
+                <div class="event-description">샤이닝푸드 홈페이지를 오픈하였습니다. 앞으로도 많은...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

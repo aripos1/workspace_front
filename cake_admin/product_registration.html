@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 등록 페이지</title>
+    <link rel="stylesheet" href="product_registration_styles.css">
+    <script>
+        function addOption(inputId, containerId) {
+            const inputValue = document.getElementById(inputId).value;
+            if (inputValue.trim() !== "") {
+                const container = document.getElementById(containerId);
+                const newOption = document.createElement('div');
+                newOption.className = 'multi-choice-option';
+                newOption.innerHTML = `<input type="checkbox" name="${inputId}" value="${inputValue}"><label>${inputValue}</label>`;
+                container.appendChild(newOption);
+                document.getElementById(inputId).value = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>상품 등록 페이지</h1>
+        <nav>
+            <a href="main.html">대시보드</a>
+            <a href="dashboard.html">주문 관리</a>
+            <a href="instagram_style.html">업체 홍보 페이지</a>
+            <a href="">도안 관리</a>
+            <a href="">리뷰 관리</a>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="product-registration">
+            <h2>새로운 케이크 상품 등록</h2>
+            <form class="product-form">
+                <label for="product-name">상품명:</label>
+                <input type="text" id="product-name" name="product-name" placeholder="예: 초콜릿 케이크">
+
+                <label for="product-category">카테고리:</label>
+                <select id="product-category" name="product-category">
+                    <option value="regular">일반 케이크</option>
+                    <option value="vegan">비건 케이크</option>
+                    <option value="pet">반려동물 케이크</option>
+                </select>
+
+                <label for="cake-size">케이크 호수 (여러 개 선택 가능):</label>
+                <div id="cake-size-container">
+                    <input type="checkbox" id="size-6" name="cake-size" value="6호">
+                    <label for="size-6">6호</label><br>
+                    <input type="checkbox" id="size-8" name="cake-size" value="8호">
+                    <label for="size-8">8호</label><br>
+                    <input type="checkbox" id="size-10" name="cake-size" value="10호">
+                    <label for="size-10">10호</label><br>
+                </div>
+                <input type="text" id="new-cake-size" placeholder="새로운 케이크 사이즈 입력">
+                <button type="button" onclick="addOption('new-cake-size', 'cake-size-container')">추가</button>
+
+                <label for="cake-flavor">맛 - 시트 (여러 개 선택 가능):</label>
+                <div id="cake-flavor-container">
+                    <input type="checkbox" id="flavor-chocolate" name="cake-flavor" value="초콜릿">
+                    <label for="flavor-chocolate">초콜릿</label><br>
+                    <input type="checkbox" id="flavor-vanilla" name="cake-flavor" value="바닐라">
+                    <label for="flavor-vanilla">바닐라</label><br>
+                    <input type="checkbox" id="flavor-red-velvet" name="cake-flavor" value="레드벨벳">
+                    <label for="flavor-red-velvet">레드벨벳</label><br>
+                    <input type="checkbox" id="flavor-lemon" name="cake-flavor" value="레몬">
+                    <label for="flavor-lemon">레몬</label><br>
+                    <input type="checkbox" id="flavor-carrot" name="cake-flavor" value="당근">
+                    <label for="flavor-carrot">당근</label><br>
+                    <input type="checkbox" id="flavor-strawberry" name="cake-flavor" value="딸기">
+                    <label for="flavor-strawberry">딸기</label><br>
+                </div>
+                <input type="text" id="new-cake-flavor" placeholder="새로운 맛 입력">
+                <button type="button" onclick="addOption('new-cake-flavor', 'cake-flavor-container')">추가</button>
+
+                <label for="cream-flavor">맛 - 크림 (여러 개 선택 가능):</label>
+                <div id="cream-flavor-container">
+                    <input type="checkbox" id="cream-chocolate" name="cream-flavor" value="초콜릿">
+                    <label for="cream-chocolate">초콜릿</label><br>
+                    <input type="checkbox" id="cream-vanilla" name="cream-flavor" value="바닐라">
+                    <label for="cream-vanilla">바닐라</label><br>
+                    <input type="checkbox" id="cream-whipped" name="cream-flavor" value="생크림">
+                    <label for="cream-whipped">생크림</label><br>
+                    <input type="checkbox" id="cream-lemon" name="cream-flavor" value="레몬">
+                    <label for="cream-lemon">레몬</label><br>
+                </div>
+                <input type="text" id="new-cream-flavor" placeholder="새로운 크림 맛 입력">
+                <button type="button" onclick="addOption('new-cream-flavor', 'cream-flavor-container')">추가</button>
+
+                <label for="cake-background-color">케이크 배경 색상 (여러 개 선택 가능):</label>
+                <div id="cake-background-color-container" class="multi-choice-option">
+                    <input type="checkbox" id="background-blue" name="cake-background-color" value="파스텔 블루">
+                    <label for="background-blue">파스텔 블루</label><br>
+                    <input type="checkbox" id="background-white" name="cake-background-color" value="흰색">
+                    <label for="background-white">흰색</label><br>
+                </div>
+                <input type="text" id="new-cake-background-color" placeholder="새로운 배경 색상 입력">
+                <button type="button" onclick="addOption('new-cake-background-color', 'cake-background-color-container')">추가</button>
+
+                <label for="cream-location">크림 위치 (여러 개 선택 가능):</label>
+                <div id="cream-location-container" class="multi-choice-option">
+                    <input type="checkbox" id="cream-top" name="cream-location" value="상단">
+                    <label for="cream-top">상단</label><br>
+                    <input type="checkbox" id="cream-side" name="cream-location" value="측면">
+                    <label for="cream-side">측면</label><br>
+                </div>
+                <input type="text" id="new-cream-location" placeholder="새로운 크림 위치 입력">
+                <button type="button" onclick="addOption('new-cream-location', 'cream-location-container')">추가</button>
+
+                <label for="cream-color">크림 색상 (여러 개 선택 가능):</label>
+                <div id="cream-color-container" class="multi-choice-option">
+                    <input type="checkbox" id="cream-white" name="cream-color" value="흰색">
+                    <label for="cream-white">흰색</label><br>
+                    <input type="checkbox" id="cream-pink" name="cream-color" value="분홍색">
+                    <label for="cream-pink">분홍색</label><br>
+                </div>
+                <input type="text" id="new-cream-color" placeholder="새로운 크림 색상 입력">
+                <button type="button" onclick="addOption('new-cream-color', 'cream-color-container')">추가</button>
+
+                <label for="design-color">디자인 색상 (여러 개 선택 가능):</label>
+                <div id="design-color-container" class="multi-choice-option">
+                    <input type="checkbox" id="design-red" name="design-color" value="빨강">
+                    <label for="design-red">빨강</label><br>
+                    <input type="checkbox" id="design-yellow" name="design-color" value="노랑">
+                    <label for="design-yellow">노랑</label><br>
+                </div>
+                <input type="text" id="new-design-color" placeholder="새로운 디자인 색상 입력">
+                <button type="button" onclick="addOption('new-design-color', 'design-color-container')">추가</button>
+
+                <label for="deco-type">데코 종류 (여러 개 선택 가능):</label>
+                <div id="deco-type-container" class="multi-choice-option">
+                    <input type="checkbox" id="deco-flower" name="deco-type" value="꽃">
+                    <label for="deco-flower">꽃</label><br>
+                    <input type="checkbox" id="deco-fruit" name="deco-type" value="과일">
+                    <label for="deco-fruit">과일</label><br>
+                </div>
+                <input type="text" id="new-deco-type" placeholder="새로운 데코 종류 입력">
+                <button type="button" onclick="addOption('new-deco-type', 'deco-type-container')">추가</button>
+
+                <label for="deco-color">데코 색상 (여러 개 선택 가능):</label>
+                <div id="deco-color-container" class="multi-choice-option">
+                    <input type="checkbox" id="deco-green" name="deco-color" value="초록">
+                    <label for="deco-green">초록</label><br>
+                    <input type="checkbox" id="deco-yellow" name="deco-color" value="노랑">
+                    <label for="deco-yellow">노랑</label><br>
+                </div>
+                <input type="text" id="new-deco-color" placeholder="새로운 데코 색상 입력">
+                <button type="button" onclick="addOption('new-deco-color', 'deco-color-container')">추가</button>
+
+                <label for="design-pattern">도안 (기본, 도안 번호):</label>
+                <input type="text" id="design-pattern" name="design-pattern" placeholder="예: 기본, 12345">
+
+                <label for="main-product-image">메인 상품 이미지:</label>
+                <input type="file" id="main-product-image" name="main-product-image" accept="image/*">
+
+                <label for="description-product-image">상품 설명에 들어가는 이미지:</label>
+                <input type="file" id="description-product-image" name="description-product-image" accept="image/*">
+
+                <label for="product-description">상품 설명:</label>
+                <textarea id="product-description" name="product-description" placeholder="상품에 대한 설명을 입력하세요"></textarea>
+
+                <label for="product-price">가격:</label>
+                <input type="number" id="product-price" name="product-price" placeholder="예: 30000">
+
+                <label for="pickup-method">배송 방법 (여러 개 선택 가능):</label>
+                <div class="multi-choice-option">
+                    <input type="checkbox" id="pickup" name="pickup-method" value="픽업">
+                    <label for="pickup">픽업</label><br>
+                    <input type="checkbox" id="delivery" name="pickup-method" value="배송">
+                    <label for="delivery">배송</label><br>
+                    <input type="checkbox" id="pickup-delivery" name="pickup-method" value="픽업&배송">
+                    <label for="pickup-delivery">픽업&배송</label><br>
+                </div>
+
+                <button type="submit" class="button-submit">상품 등록하기</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>케이크 사이트 &copy; 2024. 모든 권리 보유.</p>
+    </footer>
+</body>
+</html>

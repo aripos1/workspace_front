@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티</title>
+    <link rel="stylesheet" href="common_styles.css">
+    <link rel="stylesheet" href="community_styles.css">
+</head>
+<body>
+    <header>
+        <h1>커뮤니티</h1>
+        <nav>
+            <a href="main.html">메인 페이지</a>
+            <a href="auction.html">경매 시스템</a>
+            <a href="manufacture.html">제조 과정 공개</a>
+            <a href="dashboard.html">주문 관리</a>
+        </nav>
+    </header>
+    <main class="container">
+        <h2>도안 공유 및 이야기 나누기</h2>
+        <form class="design-upload-form">
+            <label for="design-upload">도안 업로드:</label>
+            <input type="file" id="design-upload" name="design-upload">
+            <label for="description">설명:</label>
+            <textarea id="description" name="description"></textarea>
+            <button type="submit">도안 올리기</button>
+        </form>
+        <section class="shared-designs">
+            <h3>공유된 도안들</h3>
+            <div class="design-grid">
+                <div class="design-item">
+                    <img src="cake_design1.jpg" alt="도안 이미지">
+                    <p>초콜릿 케이크 도안</p>
+                    <button>좋아요</button>
+                </div>
+                <div class="design-item">
+                    <img src="cake_design2.jpg" alt="도안 이미지">
+                    <p>딸기 생크림 도안</p>
+                    <button>좋아요</button>
+                </div>
+                <!-- 추가적인 도안들 -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>케이크 사이트 &copy; 2024. 모든 권리 보유.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문 상세 페이지</title>
+    <link rel="stylesheet" href="order_detail_styles.css">
+</head>
+<body>
+    <header>
+        <h1>주문 상세 페이지</h1>
+        <nav>
+            <a href="main.html">메인 페이지</a>
+            <a href="order_list_page_updated.html">주문 목록</a>
+            <a href="dashboard.html">주문 관리</a>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="order-detail">
+            <h2>주문 상세 정보</h2>
+            <div class="order-summary">
+                <h3>상품 정보</h3>
+                <p>주문 번호: <span id="order-number">1002</span></p>
+                <p>고객명: <span id="customer-name">박민수</span></p>
+                <p>상품명: <span id="product-name">바닐라 케이크</span></p>
+                <p>카테고리: <span id="product-category">일반 케이크</span></p>
+                <p>가격: <span id="product-price">35,000원</span></p>
+                <p>옵션: <span id="product-options">1호, 바닐라 시트, 생크림</span></p>
+                <p>상태: <span id="order-status">주문 완료</span></p>
+                <img src="images/vanilla_cake.jpg" alt="바닐라 케이크" class="product-image">
+            </div>
+            <div class="design-section">
+                <h3>도안 확인</h3>
+                <p>도안 번호: <span id="design-pattern">12345</span></p>
+                <img src="images/design_example.jpg" alt="도안 이미지" class="design-image">
+            </div>
+            <div class="confirmation-section">
+                <h3>중간 컨펌 요청</h3>
+                <p>업체가 중간 컨펌을 요청할 경우, 아래에서 선택하세요:</p>
+                <button class="confirm-button photo-confirm" onclick="openModal('photoModal')">사진으로 요청하기</button>
+                <button class="confirm-button video-confirm" onclick="openModal('videoModal')">영상으로 요청하기</button>
+                <div class="live-video">
+                    <h3>실시간 영상 요청</h3>
+                    <p>실시간 영상을 통해 제작 과정을 확인하고 소통할 수 있습니다.</p>
+                    <button class="live-button" onclick="scheduleLiveStream()">실시간 영상 촬영하기</button>
+                </div>
+            </div>
+            <div class="action-section" id="action-section">
+                <h3>주문 취소 요청</h3>
+                <p>해당 도안을 확인 후 제작이 불가능한 경우 주문을 취소할 수 있습니다.</p>
+                <button class="cancel-button" onclick="requestCancellation()">주문 취소 요청하기</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>케이크 사이트 &copy; 2024. 모든 권리 보유.</p>
+    </footer>
+
+    <!-- 사진 요청 모달 -->
+    <div id="photoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('photoModal')">&times;</span>
+            <h2>사진 촬영 요청</h2>
+            <video id="photoCamera" autoplay></video>
+            <button onclick="takePhoto()">사진 촬영</button>
+        </div>
+    </div>
+
+    <!-- 영상 요청 모달 -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('videoModal')">&times;</span>
+            <h2>영상 촬영 요청</h2>
+            <video id="videoCamera" autoplay></video>
+            <button onclick="startVideoRecording()">영상 촬영 시작</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        function takePhoto() {
+            // 사진 촬영 로직 구현
+            alert('사진이 촬영되었습니다. 자동으로 업로드 중입니다.');
+            closeModal('photoModal');
+        }
+
+        function startVideoRecording() {
+            // 영상 촬영 로직 구현
+            alert('영상 촬영이 시작되었습니다. 완료 후 자동 업로드됩니다.');
+            closeModal('videoModal');
+        }
+
+        function scheduleLiveStream() {
+            // 10분 전 알람 설정
+            setTimeout(function() {
+                alert('10분 후에 실시간 케이크 제작이 시작됩니다. 준비해주세요.');
+            }, 0); // 실제로는 현재 시간과 예약된 시간을 계산하여 설정해야 합니다.
+
+            // 10분 뒤 실시간 스트림 시작
+            setTimeout(function() {
+                startLiveStream();
+            }, 10 * 60 * 1000); // 10분을 밀리초로 변환
+        }
+
+        function startLiveStream() {
+            // 실시간 영상 촬영 및 사용자 소통 로직 구현
+            alert('실시간 영상이 시작되었습니다. 사용자와 소통을 시작합니다.');
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const orderStatus = document.getElementById('order-status').innerText;
+            const actionSection = document.getElementById('action-section');
+
+            if (orderStatus !== '주문 완료') {
+                actionSection.style.display = 'none';
+            }
+        });
+
+        function requestCancellation() {
+            const confirmation = confirm('이 주문을 정말 취소하시겠습니까?');
+            if (confirmation) {
+                alert('주문 취소 요청이 접수되었습니다. 고객에게 알림이 전송됩니다.');
+                // 실제 주문 취소 요청 로직을 추가해야 함 (예: 서버와의 통신)
+            }
+        }
+    </script>
+</body>
+</html>

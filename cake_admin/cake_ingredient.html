@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재료 상세 페이지</title>
+    <link rel="stylesheet" href="cake_ingredient_styles.css">
+</head>
+<body>
+    <header>
+        <h1>케이크 재료 상세 정보</h1>
+        <nav class="navigation">
+            <a href="main.html">홈</a>
+            <a href="wholesale.html">도매 상품 목록</a>
+            <a href="dashboard.html">주문 관리</a>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="ingredient-detail">
+            <div class="image-gallery">
+                <img src="images/ingredient_main.jpg" alt="케이크 재료 메인 이미지" class="main-image">
+                <div class="thumbnail-gallery">
+                    <img src="images/ingredient_thumb1.png" alt="재료 썸네일 1" class="thumbnail">
+                    <img src="images/ingredient_thumb2.png" alt="재료 썸네일 2" class="thumbnail">
+                </div>
+            </div>
+            <div class="ingredient-info">
+                <h2>MINI 케이크용 밀가루</h2>
+                <p class="price">10,000원</p>
+                <div class="delivery-options">
+                    <h3>배송 방법</h3>
+                    <p>택배 배송만 가능</p>
+                </div>
+                <div class="ingredient-description">
+                    <h3>재료 설명</h3>
+                    <p>고품질의 MINI 케이크 전용 밀가루입니다. 부드러운 질감과 높은 흡수율로 케이크의 완성도를 높여줍니다.</p>
+                </div>
+                <div class="package-info">
+                    <h3>포장 정보</h3>
+                    <p>포장 단위: 1kg</p>
+                    <p>유통기한: 2025년 12월 31일</p>
+                </div>
+                <div class="quantity-selection">
+                    <h3>수량 선택</h3>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1">
+                </div>
+                <div class="request">
+                    <h3>요청 사항 (0/100)</h3>
+                    <textarea id="request-text" maxlength="100" placeholder="배송 관련 요청 사항을 입력하세요."></textarea>
+                </div>
+                <div class="order-buttons">
+                    <button class="order-button add-to-cart">장바구니에 추가</button>
+                    <button class="order-button buy-now">바로 구매</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>케이크 사이트 &copy; 2024. 모든 권리 보유.</p>
+    </footer>
+</body>
+</html>

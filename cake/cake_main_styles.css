@@ -1,0 +1,82 @@
+/* Cake Main Page Specific Styles */
+
+/* 메인 정보 섹션 스타일 */
+.main-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .info-box {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    background-color: #ffe0e6;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .symptoms {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    background-color: #fff4e6;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  /* 안내 섹션 버튼 스타일 */
+  .button-primary {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    margin: 10px;
+  }
+  
+  .button-secondary {
+    background-color: #2196f3;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    margin: 10px;
+  }
+  
+  /* 소식 그리드 스타일 */
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .news-grid article {
+    background-color: #e6f7ff;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .news-grid article:hover {
+    transform: translateY(-5px);
+  }
+  
+  .news-grid h3 {
+    font-size: 1.2em;
+    color: #333;
+  }
+  
+  /* 푸터 링크 스타일 */
+  footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  

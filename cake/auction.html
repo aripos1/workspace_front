@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경매 시스템</title>
+    <link rel="stylesheet" href="common_styles.css">
+    <link rel="stylesheet" href="auction_system_styles.css">
+</head>
+<body>
+    <header>
+        <h1>경매 시스템</h1>
+        <nav>
+            <a href="main.html">메인 페이지</a>
+            <a href="community.html">커뮤니티</a>
+            <a href="manufacture.html">제조 과정 공개</a>
+            <a href="dashboard.html">주문 관리</a>
+        </nav>
+    </header>
+    <main class="container">
+        <form>
+            <h2>원하는 케이크를 등록하세요</h2>
+            <label for="cake-type">케이크 종류:</label>
+            <input type="text" id="cake-type" name="cake-type">
+            <label for="cake-size">케이크 크기:</label>
+            <input type="text" id="cake-size" name="cake-size">
+            <label for="description">설명:</label>
+            <textarea id="description" name="description"></textarea>
+            <button type="submit">등록하기</button>
+        </form>
+        <section class="auction-list">
+            <h2>진행 중인 경매</h2>
+            <div class="auction-item">
+                <p>초콜릿 케이크 - 제안가: 50,000원</p>
+                <button>참여하기</button>
+            </div>
+            <!-- 추가적인 경매 항목들 -->
+        </section>
+    </main>
+</body>
+</html>

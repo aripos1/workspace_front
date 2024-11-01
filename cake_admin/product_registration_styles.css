@@ -1,0 +1,131 @@
+/* Product Registration Page Specific Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ddd;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.product-registration {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.product-form input[type="text"],
+.product-form input[type="number"],
+.product-form input[type="file"],
+.product-form input[type="date"],
+.product-form input[type="time"],
+.product-form select,
+.product-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.product-form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.product-form textarea {
+    resize: vertical;
+}
+
+.button-submit {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+.button-submit:hover {
+    background-color: #45a049;
+}
+
+/* Styles for multiple option sections */
+.product-form div {
+    margin-bottom: 20px;
+}
+
+.product-form div label {
+    font-weight: normal;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.product-form input[type="checkbox"] + label {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* Styles for color and multiple-choice sections */
+.product-form input[type="text"].multi-choice {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Checkbox style for additional multi-choice options */
+.product-form .multi-choice-option {
+    margin-bottom: 15px;
+}
+.product-form .multi-choice-option input[type="checkbox"] {
+    margin-right: 8px;
+}
+.product-form .multi-choice-option label {
+    margin-right: 15px;
+    font-weight: normal;
+    display: inline;
+}

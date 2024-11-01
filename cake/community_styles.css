@@ -1,0 +1,103 @@
+/* Community Page Specific Styles */
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #ddd;
+  }
+  
+  .design-upload-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .design-upload-form label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  .design-upload-form input, .design-upload-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .design-upload-form button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .design-upload-form button:hover {
+    background-color: #45a049;
+  }
+  
+  .shared-designs {
+    margin-top: 40px;
+  }
+  
+  .design-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .design-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .design-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .design-item img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .design-item p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .design-item button {
+    background-color: #2196f3;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .design-item button:hover {
+    background-color: #1976d2;
+  }
+  
