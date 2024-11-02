@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자유 게시판</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background-color: #555;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .content {
+            flex: 1;
+        }
+        .banner {
+            width: 100%;
+            height: 150px;
+            background-color: #ffeb3b;
+            text-align: center;
+            line-height: 150px;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .board-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .board-header .search-box {
+            display: flex;
+            align-items: center;
+        }
+        .board-header input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            margin-right: 10px;
+        }
+        .board-header button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .board-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .board-table th, .board-table td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+        }
+        .board-table th {
+            background-color: #f4f4f4;
+        }
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .pagination a {
+            margin: 0 5px;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <header>
+        <h1>자유 게시판</h1>
+    </header>
+
+    <!-- 내비게이션 영역 -->
+    <nav>
+        <a href="#">홈</a>
+        <a href="#">업체 리스트</a>
+        <a href="#">마이페이지</a>
+    </nav>
+
+    <!-- 배너 영역 -->
+    <div class="banner">
+        🍰 시식 이벤트 진행 중! 지금 신청하세요! 🍰
+    </div>
+
+    <div class="container">
+        <!-- 사이드바 영역 -->
+        <aside class="sidebar">
+            <h3>메뉴</h3>
+            <ul>
+                <li><a href="#">자유 게시판</a></li>
+                <li><a href="#">도안 게시판</a></li>
+                <li><a href="#">토론 게시판</a></li>
+            </ul>
+        </aside>
+
+        <!-- 콘텐츠 영역 -->
+        <div class="content">
+            <div class="board-header">
+                <button>글쓰기</button>
+                <div class="search-box">
+                    <input type="text" placeholder="검색어를 입력하세요">
+                    <button>검색</button>
+                </div>
+            </div>
+
+            <!-- 게시판 테이블 섹션 -->
+            <table class="board-table">
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>카테고리</th>
+                        <th>작성자</th>
+                        <th>작성일</th>
+                        <th>조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>첫 번째 게시물 제목</td>
+                        <td>질문</td>
+                        <td>작성자A</td>
+                        <td>2024-11-01</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>두 번째 게시물 제목</td>
+                        <td>시식 후기</td>
+                        <td>작성자B</td>
+                        <td>2024-11-02</td>
+                        <td>85</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>두 번째 게시물 제목</td>
+                        <td>시식 이벤트 제공</td>
+                        <td>작성자C</td>
+                        <td>2024-11-01</td>
+                        <td>300</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- 페이징 섹션 -->
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">다음 &raquo;</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 영역 -->
+    <footer>
+        <p>케이크 사이트 © 2024. 모든 권리 보유.</p>
+    </footer>
+</body>
+</html>

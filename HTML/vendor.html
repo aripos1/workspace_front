@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업체 리스트 - 핸드메이드 케이크</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #fafafa;
+        }
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 1em;
+            text-align: center;
+            height: 80px; /* 헤더 높이 */
+        }
+        main {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 1em;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2em;
+        }
+        .vendor-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1.5em;
+            text-align: center;
+        }
+        .vendor-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 1em;
+        }
+        .vendor-card h3 {
+            margin: 0.5em 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .vendor-card p {
+            color: #777;
+            font-size: 0.9em;
+        }
+        .vendor-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 0.5em;
+            margin: 1em 0;
+        }
+        .vendor-gallery img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .order-button {
+            background-color: #ff6b6b;
+            color: #fff;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .order-button:hover {
+            background-color: #ff5252;
+        }
+        footer {
+            background-color: #666;
+            color: #fff;
+            padding: 2em;
+            text-align: center;
+            margin-top: 2em;
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header>
+        헤더 영역
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main>
+        <!-- 업체 카드 -->
+        <div class="vendor-card">
+            <img src="https://via.placeholder.com/80" alt="업체 이미지">
+            <h3>아워샷</h3>
+            <p>서울 동탄</p>
+            <div class="vendor-gallery">
+                <img src="https://via.placeholder.com/50" alt="케이크 이미지 1">
+                <img src="https://via.placeholder.com/50" alt="케이크 이미지 2">
+                <img src="https://via.placeholder.com/50" alt="케이크 이미지 3">
+                <img src="https://via.placeholder.com/50" alt="케이크 이미지 4">
+            </div>
+            <button class="order-button">주문하기</button>
+        </div>
+
+        <div class="vendor-card">
+            <img src="https://via.placeholder.com/80" alt="업체 이미지">
+            <h3>오월의 케익</h3>
+            <p>서울 강동구</p>
+            <div class="vendor-gallery">
+                <img src="https://via.placeholder.com/50" alt="케이크 이미지 1">
+                <img src="https://via.placeholder.com/50" alt="케이크 이미지 2">
+                <img src="https://via.placeholder.com/50" alt="케이크 이미지 3">
+                <img src="https://via.placeholder.com/50" alt="케이크 이미지 4">
+            </div>
+            <button class="order-button">주문하기</button>
+        </div>
+
+        <div class="vendor-card">
+            <img src="https://via.placeholder.com/80" alt="업체 이미지">
+            <h3>오월의 케익</h3>
+            <p>서울 강동구</p>
+            <div class="vendor-gallery">
+                <img src="https://via.placeholder.com/50" alt="케이크 이미지 1">
+                <img src="https://via.placeholder.com/50" alt="케이크 이미지 2">
+                <img src="https://via.placeholder.com/50" alt="케이크 이미지 3">
+                <img src="https://via.placeholder.com/50" alt="케이크 이미지 4">
+            </div>
+            <button class="order-button">주문하기</button>
+        </div>
+
+        <!-- 추가적인 업체 카드들을 추가할 수 있음 -->
+    </main>
+
+    <!-- 푸터 -->
+    <footer>
+        &copy; 푸터 영역
+    </footer>
+</body>
+</html>

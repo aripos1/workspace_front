@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시식 이벤트 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background-color: #555;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .events-section {
+            margin-bottom: 30px;
+        }
+        .events-section h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        .event-item {
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .event-item h3 {
+            margin: 0 0 10px 0;
+        }
+        .event-item p {
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <header>
+        <h1>시식 이벤트</h1>
+    </header>
+
+    <!-- 내비게이션 영역 -->
+    <nav>
+        <a href="#">홈</a>
+        <a href="#">업체 리스트</a>
+        <a href="#">마이페이지</a>
+    </nav>
+
+    <!-- 이벤트 콘텐츠 영역 -->
+    <div class="container">
+        <!-- 진행 중인 시식 이벤트 섹션 -->
+        <div class="events-section">
+            <h2>현재 진행 중인 시식 이벤트</h2>
+            <div class="event-item">
+                <h3>신제품 케이크 시식 이벤트</h3>
+                <p>일정: 2024년 11월 5일 - 2024년 11월 10일</p>
+            </div>
+            <div class="event-item">
+                <h3>쿠키 시식 이벤트</h3>
+                <p>일정: 2024년 11월 15일 - 2024년 11월 20일</p>
+            </div>
+        </div>
+
+        <!-- 종료된 시식 이벤트 섹션 -->
+        <div class="events-section">
+            <h2>종료된 시식 이벤트</h2>
+            <div class="event-item">
+                <h3>봄 시즌 케이크 시식 이벤트</h3>
+                <p>일정: 2024년 3월 1일 - 2024년 3월 5일</p>
+                <p>이벤트 종료</p>
+            </div>
+            <div class="event-item">
+                <h3>여름 스페셜 디저트 시식회</h3>
+                <p>일정: 2024년 6월 10일 - 2024년 6월 15일</p>
+                <p>이벤트 종료</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 영역 -->
+    <footer>
+        <p>케이크 사이트 © 2024. 모든 권리 보유.</p>
+    </footer>
+</body>
+</html>

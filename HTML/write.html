@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글쓰기 화면</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background-color: #555;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .content {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .form-group input[type="text"], .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        .form-buttons {
+            text-align: right;
+        }
+        .form-buttons button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-buttons button.cancel {
+            background-color: #999;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <header>
+        <h1>자유 게시판 글쓰기</h1>
+    </header>
+
+    <!-- 내비게이션 영역 -->
+    <nav>
+        <a href="#">홈</a>
+        <a href="#">업체 리스트</a>
+        <a href="#">마이페이지</a>
+    </nav>
+
+    <div class="container">
+        <!-- 사이드바 영역 -->
+        <aside class="sidebar">
+            <h3>메뉴</h3>
+            <ul>
+                <li><a href="#">자유 게시판</a></li>
+                <li><a href="#">도안 게시판</a></li>
+                <li><a href="#">토론 게시판</a></li>
+            </ul>
+        </aside>
+
+        <!-- 글쓰기 콘텐츠 영역 -->
+        <div class="content">
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="category">카테고리</label>
+                    <select id="category" name="category">
+                        <option value="question">질문</option>
+                        <option value="review">시식 후기</option>
+                        <option value="recommendation">추천</option>
+                        <option value="event">이벤트 공유</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="title">제목</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="content">내용</label>
+                    <textarea id="content" name="content" required></textarea>
+                </div>
+                <div class="form-buttons">
+                    <button type="button" class="cancel" onclick="window.history.back()">취소</button>
+                    <button type="submit">작성 완료</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 푸터 영역 -->
+    <footer>
+        <p>케이크 사이트 © 2024. 모든 권리 보유.</p>
+    </footer>
+</body>
+</html>

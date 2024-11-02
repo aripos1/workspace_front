@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시물 상세 보기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background-color: #555;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .content {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .post-title {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .post-info {
+            color: #777;
+            margin-bottom: 20px;
+        }
+        .post-content {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .form-buttons {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .form-buttons button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-buttons button.back {
+            background-color: #999;
+            margin-right: 10px;
+        }
+        .comments-section {
+            margin-top: 40px;
+        }
+        .comment {
+            border-top: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .comment-author {
+            font-weight: bold;
+        }
+        .comment-content {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        .reply-button {
+            background: none;
+            border: none;
+            color: #4CAF50;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .reply-form {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        .reply-form input[type="text"] {
+            width: 80%;
+            padding: 5px;
+            margin-right: 5px;
+        }
+        .reply-form button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <header>
+        <h1>게시물 상세 보기</h1>
+    </header>
+
+    <!-- 내비게이션 영역 -->
+    <nav>
+        <a href="#">홈</a>
+        <a href="#">업체 리스트</a>
+        <a href="#">마이페이지</a>
+    </nav>
+
+    <div class="container">
+        <!-- 사이드바 영역 -->
+        <aside class="sidebar">
+            <h3>메뉴</h3>
+            <ul>
+                <li><a href="#">자유 게시판</a></li>
+                <li><a href="#">도안 게시판</a></li>
+                <li><a href="#">토론 게시판</a></li>
+            </ul>
+        </aside>
+
+        <!-- 게시물 상세 콘텐츠 영역 -->
+        <div class="content">
+            <div class="post-title">게시물  제목 예시</div>
+            <div class="post-info">카테고리: 질문 | 작성자: 작성자A | 작성일: 2024-11-01 | 조회수: 120</div>
+            <div class="post-content">
+                여기에는 게시물의 상세 내용이 들어갑니다. 이곳에는 사용자가 작성한 게시물의 구체적인 내용이 표시됩니다. 긴 텍스트도 문제없이 표시될 수 있도록 충분한 공간이 확보되어 있습니다.
+            </div>
+            <div class="form-buttons">
+                <button type="button" class="back" onclick="window.history.back()">목록으로</button>
+                <button type="button">수정</button>
+                <button type="button">삭제</button>
+            </div>
+
+            <!-- 댓글 섹션 -->
+            <div class="comments-section">
+                <h3>댓글</h3>
+
+                <!-- 댓글 목록 -->
+                <div class="comment">
+                    <div class="comment-author">댓글 작성자A</div>
+                    <div class="comment-content">이 게시물에 대한 첫 번째 댓글입니다.</div>
+                    <button class="reply-button" onclick="toggleReplyForm(this)">답글 달기</button>
+
+                    <!-- 대댓글 입력 폼 -->
+                    <div class="reply-form" style="display: none;">
+                        <input type="text" placeholder="답글을 입력하세요">
+                        <button type="button">작성</button>
+                    </div>
+                </div>
+
+                <div class="comment">
+                    <div class="comment-author">댓글 작성자B</div>
+                    <div class="comment-content">이 게시물에 대한 두 번째 댓글입니다.</div>
+                    <button class="reply-button" onclick="toggleReplyForm(this)">답글 달기</button>
+
+                    <!-- 대댓글 입력 폼 -->
+                    <div class="reply-form" style="display: none;">
+                        <input type="text" placeholder="답글을 입력하세요">
+                        <button type="button">작성</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 영역 -->
+    <footer>
+        <p>케이크 사이트 © 2024. 모든 권리 보유.</p>
+    </footer>
+
+    <script>
+        function toggleReplyForm(button) {
+            const replyForm = button.nextElementSibling;
+            if (replyForm.style.display === "none") {
+                replyForm.style.display = "block";
+            } else {
+                replyForm.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

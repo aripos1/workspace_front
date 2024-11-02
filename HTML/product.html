@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제품 상세 페이지 - 핸드메이드 케이크</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #fafafa;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 2em;
+            text-align: center; 
+            height: 100px; /* 헤더 높이 */
+        }
+        main {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 2em;
+            display: flex;
+            gap: 2em;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        #product-image {
+            width: 50%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0e0e0;
+            height: 400px; /* 이미지 상자 높이 */
+        }
+        #product-image img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        #product-details {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+        #product-info {
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            height: 150px; /* 제품 정보 상자 높이 */
+        }
+        #timer {
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            height: 100px; /* 타이머 상자 높이 */
+        }
+        #product-options {
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            height: 120px; /* 옵션 상자 높이 */
+        }
+        #product-description {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 2em;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            height: 150px; /* 제품 설명 상자 높이 */
+        }
+        #purchase-info, #storage-info {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 2em;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            height: 150px; /* 구매 안내, 보관 방법 상자 높이 */
+        }
+        footer {
+            background-color: #666;
+            color: #fff;
+            padding: 2em;
+            text-align: center;
+            margin-top: 2em;
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header>
+        헤더 영역
+    </header>
+
+    <main>
+        <!-- 제품 이미지 -->
+        <div id="product-image">
+            <img src="https://via.placeholder.com/350x400" alt="제품 이미지 상자">
+        </div>
+
+        <!-- 제품 정보 -->
+        <div id="product-details">
+            <div id="product-info">
+                제품 정보 영역
+            </div>
+
+            <!-- 타이머 또는 다른 선택사항 -->
+            <div id="timer">
+                타이머 영역 (옵션)
+            </div>
+
+            <!-- 옵션 선택 및 기타 정보 -->
+            <div id="product-options">
+                옵션 선택 영역
+            </div>
+        </div>
+    </main>
+
+    <!-- 제품 설명 -->
+    <section id="product-description">
+        제품 설명 영역
+    </section>
+
+    <!-- 구매 안내 -->
+    <section id="purchase-info">
+        구매 안내 영역
+    </section>
+
+    <!-- 보관 방법 -->
+    <section id="storage-info">
+        보관 방법 영역
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        푸터 영역
+    </footer>
+</body>
+</html>
