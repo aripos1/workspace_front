@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>케이크 재료 관리 - 주문 리스트</title>
+    <link rel="stylesheet" href="cake_order_styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #444;
+            color: #fff;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 15px 0;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .update-button {
+            padding: 5px 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .update-button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>케이크 재료 관리 - 주문 리스트</h1>
+        <nav>
+            <a href="main.html">홈</a>
+            <a href="logout.html">로그아웃</a>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- 사이드바 영역 -->
+        <aside class="sidebar">
+            <nav>
+                <a href="product_management.html">상품 관리</a>
+                <a href="register_material.html">재료 등록</a>
+                <a href="shop.html">쇼핑몰 (업체)</a>
+                <a href="statistics_detail.html">통계 상세 페이지</a>
+            </nav>
+        </aside>
+        <!-- 메인 콘텐츠 영역 -->
+        <main class="main-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>주문 번호</th>
+                        <th>고객명</th>
+                        <th>상품명</th>
+                        <th>수량</th>
+                        <th>가격</th>
+                        <th>주문 날짜</th>
+                        <th>배송 상태</th>
+                        <th>상태 업데이트</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>김현성</td>
+                        <td>밀가루 (1kg)</td>
+                        <td>2</td>
+                        <td>10,000원</td>
+                        <td>2024-11-05</td>
+                        <td>배송 준비 중</td>
+                        <td><button class="update-button">배송 중으로 변경</button></td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>박지수</td>
+                        <td>설탕 (500g)</td>
+                        <td>5</td>
+                        <td>10,000원</td>
+                        <td>2024-11-06</td>
+                        <td>배송 중</td>
+                        <td><button class="update-button">배송 완료로 변경</button></td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>이민호</td>
+                        <td>초코칩 (200g)</td>
+                        <td>3</td>
+                        <td>7,500원</td>
+                        <td>2024-11-07</td>
+                        <td>배송 완료</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+    <footer>
+        <p>케이크 사이트 &copy; 2024. 모든 권리 보유.</p>
+    </footer>
+</body>
+</html>

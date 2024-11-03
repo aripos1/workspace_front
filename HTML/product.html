@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,13 +14,15 @@
             box-sizing: border-box;
             background-color: #fafafa;
         }
+
         header {
             background-color: #333;
             color: #fff;
             padding: 2em;
-            text-align: center; 
-            height: 100px; /* 헤더 높이 */
+            text-align: center;
+            height: 100px;
         }
+
         main {
             max-width: 1200px;
             margin: 2em auto;
@@ -30,6 +33,7 @@
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         #product-image {
             width: 50%;
             height: auto;
@@ -37,54 +41,42 @@
             justify-content: center;
             align-items: center;
             background-color: #e0e0e0;
-            height: 400px; /* 이미지 상자 높이 */
+            height: 400px;
         }
+
         #product-image img {
             max-width: 100%;
             max-height: 100%;
         }
+
         #product-details {
             width: 50%;
             display: flex;
             flex-direction: column;
             gap: 1em;
         }
-        #product-info {
-            padding: 1em;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            height: 150px; /* 제품 정보 상자 높이 */
-        }
-        #timer {
-            padding: 1em;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            height: 100px; /* 타이머 상자 높이 */
-        }
+
+        #product-info,
+        #timer,
         #product-options {
             padding: 1em;
             border: 1px solid #ddd;
             border-radius: 10px;
-            height: 120px; /* 옵션 상자 높이 */
+            height: 100px;
         }
-        #product-description {
+
+        #product-description,
+        #purchase-info,
+        #storage-info {
             max-width: 1200px;
             margin: 2em auto;
             padding: 2em;
             border: 1px solid #ddd;
             border-radius: 10px;
             background-color: #fff;
-            height: 150px; /* 제품 설명 상자 높이 */
+            height: 150px;
         }
-        #purchase-info, #storage-info {
-            max-width: 1200px;
-            margin: 2em auto;
-            padding: 2em;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            background-color: #fff;
-            height: 150px; /* 구매 안내, 보관 방법 상자 높이 */
-        }
+
         footer {
             background-color: #666;
             color: #fff;
@@ -92,8 +84,77 @@
             text-align: center;
             margin-top: 2em;
         }
+
+        .comment-section {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 2em;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+
+        .comment-list {
+            margin-top: 2em;
+        }
+
+        .comment {
+            border-bottom: 1px solid #ddd;
+            padding: 1em 0;
+        }
+
+        .reply {
+            margin-left: 2em;
+            padding-left: 1em;
+            border-left: 2px solid #f0f0f0;
+            margin-top: 1em;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 0.5em;
+            align-items: center;
+        }
+
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
+            color: #ddd;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .star-rating input:checked ~ label {
+            color: #ffcc00;
+        }
+
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #ffcc00;
+        }
+
+        .comment-info {
+            font-size: 0.85em;
+            color: #777;
+            margin-bottom: 0.5em;
+        }
+
+        .comment-buttons {
+            display: flex;
+            gap: 1em;
+            margin-top: 1em;
+        }
     </style>
 </head>
+
 <body>
     <!-- 헤더 -->
     <header>
@@ -139,9 +200,62 @@
         보관 방법 영역
     </section>
 
+    <!-- 댓글 섹션 -->
+    <section class="comment-section">
+        <h2>리뷰 및 댓글</h2>
+
+        <!-- 댓글 작성 폼 -->
+        <form class="comment-form">
+            <label for="comment-text">댓글 내용:</label>
+            <textarea id="comment-text" rows="4" placeholder="댓글을 작성하세요"></textarea>
+
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5">⭐</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">⭐</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">⭐</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">⭐</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">⭐</label>
+            </div>
+
+            <label for="comment-image">이미지 첨부:</label>
+            <input type="file" id="comment-image" accept="image/*">
+
+            <button type="button">댓글 작성</button>
+        </form>
+
+        <!-- 댓글 목록 -->
+        <div class="comment-list">
+            <!-- 각 댓글 -->
+            <div class="comment">
+                <p class="comment-info">작성자: 아이디123 | 작성일: 2024-11-03</p>
+                <p>케이크가 너무 맛있었어요! 배송도 빠르고 매우 만족했습니다.</p>
+                <div class="star-rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+                <div class="comment-buttons">
+                    <button type="button">답글 달기</button>
+                </div>
+
+                <!-- 대댓글 -->
+                <div class="reply">
+                    <p class="comment-info">작성자: 아이디456 | 작성일: 2024-11-04</p>
+                    <p>저도 같은 의견이에요! 정말 훌륭한 제품이었습니다.</p>
+                </div>
+            </div>
+
+            <!-- 추가 댓글 -->
+        </div>
+    </section>
+
     <!-- 푸터 -->
     <footer>
         푸터 영역
     </footer>
 </body>
+
 </html>

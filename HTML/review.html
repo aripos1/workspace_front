@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리뷰 관리 페이지</title>
+    <link rel="stylesheet" href="review_management_styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #444;
+            color: #fff;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 15px 0;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .review-list {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .review-list table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .review-list th, .review-list td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .review-list th {
+            background-color: #f4f4f4;
+        }
+
+        .delete-button {
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete-button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>리뷰 관리</h1>
+        <nav>
+            <a href="main.html">대시보드</a>
+            <a href="dashboard.html">주문 관리</a>
+            <a href="instagram_style.html">업체 홍보 페이지</a>
+            <a href="design_management.html">도안 관리</a>
+            <a href="review_management.html">리뷰 관리</a>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- 사이드바 영역 -->
+        <aside class="sidebar">
+            <nav>
+                <a href="register_product.html">업체 홈페이지 (등록하기)</a>
+                <a href="order_management.html">주문 관리</a>
+                <a href="product_management.html">상품 관리</a>
+                <a href="shop.html">쇼핑몰 (업체)</a>
+                <a href="statistics_detail.html">통계 상세 페이지</a>
+                <a href="design_management.html">도안 관리</a>
+                <a href="review_management.html">리뷰 관리</a>
+            </nav>
+        </aside>
+        <!-- 메인 콘텐츠 영역 -->
+        <main class="main-content">
+            <section class="review-list">
+                <h2>리뷰 관리</h2>
+                <p>리뷰를 누르면 해당 리뷰 상세보기 페이지로 이동 및 답글을 달 수 있음</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>별점</th>
+                            <th>리뷰 내용</th>
+                            <th>작성자 아이디</th>
+                            <th>작성 날짜</th>
+                            <th>관리</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>⭐⭐⭐⭐⭐</td>
+                            <td><a href="review_detail.html">케이크가 정말 맛있었어요! 배송도 매우 빨랐습니다. (1)</a></td>
+                            <td>네이버아이디 구슬자</td>
+                            <td>2024-06-21</td>
+                            <td><button class="delete-button">삭제</button></td>
+                        </tr>
+                        <tr>
+                            <td>⭐⭐⭐⭐</td>
+                            <td><a href="review_detail.html">너무 예쁜 디자인으로 만족스럽습니다! 다만 맛이 좀 달았어요. (1)</a></td>
+                            <td>네이버아이디 구슬자</td>
+                            <td>2023-08-01</td>
+                            <td><button class="delete-button">삭제</button></td>
+                        </tr>
+                        <tr>
+                            <td>⭐⭐⭐⭐⭐</td>
+                            <td><a href="review_detail.html">배송 빠르고, 맛도 최고였어요. (2)</a></td>
+                            <td>김소희</td>
+                            <td>2022-12-12</td>
+                            <td><button class="delete-button">삭제</button></td>
+                        </tr>
+                        <!-- 추가 리뷰 항목들 -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>케이크 사이트 &copy; 2024. 모든 권리 보유.</p>
+    </footer>
+</body>
+
+</html>

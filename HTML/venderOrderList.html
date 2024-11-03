@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업체 구매 내역 페이지</title>
+    <link rel="stylesheet" href="dashboard_styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #444;
+            color: #fff;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 15px 0;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        .search-filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .search-filters input, .search-filters select, .search-filters button {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>업체 구매 내역 페이지</h1>
+        <nav>
+            <a href="main.html">홈</a>
+            <a href="logout.html">로그아웃</a>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- 사이드바 영역 -->
+        <aside class="sidebar">
+            <nav>
+                <a href="order_management.html">주문 관리</a>
+                <a href="product_management.html">상품 관리</a>
+                <a href="shop.html">쇼핑몰 (업체)</a>
+                <a href="statistics_detail.html">통계 상세 페이지</a>
+                <a href="design_management.html">도안 관리</a>
+                <a href="member_list.html">회원 리스트</a>
+                <a href="content_management.html">컨텐츠 관리</a>
+            </nav>
+        </aside>
+        <!-- 메인 콘텐츠 영역 -->
+        <main class="main-content">
+            <h2>내 구매 내역</h2>
+            <!-- 검색 및 필터 영역 -->
+            <div class="search-filters">
+                <input type="text" id="searchByProductName" placeholder="상품명으로 검색">
+                <select id="filterByStatus">
+                    <option value="all">전체 상태</option>
+                    <option value="pending">대기 중</option>
+                    <option value="shipped">배송 중</option>
+                    <option value="delivered">배송 완료</option>
+                </select>
+                <input type="date" id="startDate" placeholder="시작 날짜">
+                <input type="date" id="endDate" placeholder="종료 날짜">
+                <button onclick="filterOrders()">검색</button>
+            </div>
+            <!-- 구매 내역 테이블 -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>주문 번호</th>
+                        <th>상품명</th>
+                        <th>수량</th>
+                        <th>가격</th>
+                        <th>주문 날짜</th>
+                        <th>상태</th>
+                    </tr>
+                </thead>
+                <tbody id="orderTableBody">
+                    <tr>
+                        <td>ORD123456</td>
+                        <td>케이크 밀가루 5kg</td>
+                        <td>2</td>
+                        <td>10,000원</td>
+                        <td>2024-03-01</td>
+                        <td>배송 중</td>
+                    </tr>
+                    <tr>
+                        <td>ORD123457</td>
+                        <td>설탕 1kg</td>
+                        <td>5</td>
+                        <td>15,000원</td>
+                        <td>2024-03-05</td>
+                        <td>배송 완료</td>
+                    </tr>
+                    <!-- 추가적인 주문 데이터 -->
+                </tbody>
+            </table>
+        </main>
+    </div>
+    <footer>
+        <p>케이크 사이트 &copy; 2024. 모든 권리 보유.</p>
+    </footer>
+    <script>
+        function filterOrders() {
+            const productName = document.getElementById('searchByProductName').value.toLowerCase();
+            const status = document.getElementById('filterByStatus').value;
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            const rows = document.querySelectorAll('#orderTableBody tr');
+
+            rows.forEach(row => {
+                const productNameCell = row.cells[1].textContent.toLowerCase();
+                const statusCell = row.cells[5].textContent;
+                const orderDate = row.cells[4].textContent;
+                let displayRow = true;
+
+                if (productName && !productNameCell.includes(productName)) {
+                    displayRow = false;
+                }
+
+                if (status !== 'all' && statusCell !== status) {
+                    displayRow = false;
+                }
+
+                if (startDate && new Date(orderDate) < new Date(startDate)) {
+                    displayRow = false;
+                }
+
+                if (endDate && new Date(orderDate) > new Date(endDate)) {
+                    displayRow = false;
+                }
+
+                row.style.display = displayRow ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

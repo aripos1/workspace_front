@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업체 주문 내역 리스트</title>
+    <link rel="stylesheet" href="dashboard_styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #444;
+            color: #fff;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 15px 0;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        .order-list {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .search-filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .search-filters input, .search-filters select, .search-filters button {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>업체 주문 내역 리스트</h1>
+        <nav>
+            <a href="main.html">홈</a>
+            <a href="logout.html">로그아웃</a>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- 사이드바 영역 -->
+        <aside class="sidebar">
+            <nav>
+                <a href="order_management.html">주문 관리</a>
+                <a href="product_management.html">상품 관리</a>
+                <a href="shop.html">쇼핑몰 (업체)</a>
+                <a href="statistics_detail.html">통계 상세 페이지</a>
+                <a href="design_management.html">도안 관리</a>
+                <a href="member_list.html">회원 리스트</a>
+                <a href="content_management.html">컨텐츠 관리</a>
+            </nav>
+        </aside>
+        <!-- 메인 콘텐츠 영역 -->
+        <main class="main-content">
+            <section class="order-list">
+                <h2>업체별 주문 내역</h2>
+                <!-- 검색 및 필터 영역 -->
+                <div class="search-filters">
+                    <input type="text" id="searchByCompany" placeholder="업체명으로 검색">
+                    <input type="text" id="searchByUser" placeholder="유저명으로 검색">
+                    <input type="date" id="startDate" placeholder="시작 날짜">
+                    <input type="date" id="endDate" placeholder="종료 날짜">
+                    <button onclick="filterOrders()">검색</button>
+                </div>
+                <!-- 주문 내역 테이블 -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>주문 번호</th>
+                            <th>업체 이름</th>
+                            <th>유저 이름</th>
+                            <th>주문 날짜</th>
+                            <th>총 금액</th>
+                            <th>상태</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orderTableBody">
+                        <tr>
+                            <td>1001</td>
+                            <td>케이크 공방 A</td>
+                            <td>유저123</td>
+                            <td>2024-11-01</td>
+                            <td>150,000원</td>
+                            <td>배송 중</td>
+                        </tr>
+                        <tr>
+                            <td>1002</td>
+                            <td>베이커리 B</td>
+                            <td>유저456</td>
+                            <td>2024-11-02</td>
+                            <td>200,000원</td>
+                            <td>배송 준비 중</td>
+                        </tr>
+                        <!-- 추가적인 주문 데이터 -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>케이크 사이트 &copy; 2024. 모든 권리 보유.</p>
+    </footer>
+    <script>
+        function filterOrders() {
+            const companyName = document.getElementById('searchByCompany').value.toLowerCase();
+            const userName = document.getElementById('searchByUser').value.toLowerCase();
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+
+            const rows = document.querySelectorAll('#orderTableBody tr');
+            rows.forEach(row => {
+                const companyCell = row.cells[1].textContent.toLowerCase();
+                const userCell = row.cells[2].textContent.toLowerCase();
+                const dateCell = row.cells[3].textContent;
+
+                let isVisible = true;
+
+                if (companyName && !companyCell.includes(companyName)) {
+                    isVisible = false;
+                }
+
+                if (userName && !userCell.includes(userName)) {
+                    isVisible = false;
+                }
+
+                if (startDate && dateCell < startDate) {
+                    isVisible = false;
+                }
+
+                if (endDate && dateCell > endDate) {
+                    isVisible = false;
+                }
+
+                row.style.display = isVisible ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

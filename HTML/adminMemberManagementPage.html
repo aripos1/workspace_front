@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 관리 페이지</title>
+    <link rel="stylesheet" href="dashboard_styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #444;
+            color: #fff;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 15px 0;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        .tab-menu {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tab-menu button {
+            padding: 10px;
+            border: none;
+            background-color: #ddd;
+            cursor: pointer;
+        }
+        .tab-menu button.active {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+        .member-list, .company-list {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .search-filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .search-filters input, .search-filters button {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        #map {
+            width: 100%;
+            height: 300px; /* 지도의 크기를 줄임 */
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: url('map_placeholder.jpg') no-repeat center center;
+            background-size: cover; /* 지도 API 실패 시 사용할 기본 이미지 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>회원 관리 페이지</h1>
+        <nav>
+            <a href="main.html">홈</a>
+            <a href="logout.html">로그아웃</a>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- 사이드바 영역 -->
+        <aside class="sidebar">
+            <nav>
+                <a href="order_management.html">주문 관리</a>
+                <a href="product_management.html">상품 관리</a>
+                <a href="shop.html">쇼핑몰 (업체)</a>
+                <a href="statistics_detail.html">통계 상세 페이지</a>
+                <a href="design_management.html">도안 관리</a>
+                <a href="member_list.html">회원 리스트</a>
+                <a href="content_management.html">컨텐츠 관리</a>
+            </nav>
+        </aside>
+        <!-- 메인 콘텐츠 영역 -->
+        <main class="main-content">
+            <!-- 탭 메뉴 -->
+            <div class="tab-menu">
+                <button id="userTab" class="active" onclick="showTab('user')">유저 관리</button>
+                <button id="companyTab" onclick="showTab('company')">업체 관리</button>
+            </div>
+            <!-- 유저 관리 섹션 -->
+            <section id="userSection" class="member-list">
+                <h2>유저 관리</h2>
+                <!-- 검색 및 필터 영역 -->
+                <div class="search-filters">
+                    <input type="text" id="searchByUsername" placeholder="유저명으로 검색">
+                    <button onclick="filterMembers('user')">검색</button>
+                </div>
+                <!-- 유저 관리 테이블 -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>계정 상태</th>
+                            <th>아이디</th>
+                            <th>이름</th>
+                            <th>이메일</th>
+                            <th>전화번호</th>
+                            <th>가입일</th>
+                            <th>마지막 접속일</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userTableBody">
+                        <tr>
+                            <td>활성</td>
+                            <td>user123</td>
+                            <td>홍길동</td>
+                            <td>hong@gmail.com</td>
+                            <td>010-1234-5678</td>
+                            <td>2024-01-15</td>
+                            <td>2024-03-01</td>
+                        </tr>
+                        <tr>
+                            <td>비활성</td>
+                            <td>user456</td>
+                            <td>이지원</td>
+                            <td>lee@gmail.com</td>
+                            <td>010-9876-5432</td>
+                            <td>2024-02-01</td>
+                            <td>2024-02-28</td>
+                        </tr>
+                        <!-- 추가적인 유저 데이터 -->
+                    </tbody>
+                </table>
+            </section>
+            <!-- 업체 관리 섹션 -->
+            <section id="companySection" class="company-list">
+                <h2>업체 관리</h2>
+                <!-- 지도 영역 -->
+                <div id="map"></div>
+                <!-- 검색 및 필터 영역 -->
+                <div class="search-filters">
+                    <input type="text" id="searchByCompanyName" placeholder="업체명으로 검색">
+                    <button onclick="filterMembers('company')">검색</button>
+                </div>
+                <!-- 업체 관리 테이블 -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>업체명</th>
+                            <th>주소</th>
+                            <th>사업자 번호</th>
+                            <th>담당자 이름</th>
+                            <th>이메일</th>
+                            <th>전화번호</th>
+                            <th>가입일</th>
+                        </tr>
+                    </thead>
+                    <tbody id="companyTableBody">
+                        <tr>
+                            <td>케이크 공방 A</td>
+                            <td>경기 부천시 부홍로 258</td>
+                            <td>123-45-67890</td>
+                            <td>김철수</td>
+                            <td>cakea@gmail.com</td>
+                            <td>031-123-4567</td>
+                            <td>2024-01-15</td>
+                        </tr>
+                        <tr>
+                            <td>베이커리 B</td>
+                            <td>서울 강남구 상대로 123</td>
+                            <td>987-65-43210</td>
+                            <td>이영희</td>
+                            <td>bakeryb@gmail.com</td>
+                            <td>02-345-6789</td>
+                            <td>2024-02-01</td>
+                        </tr>
+                        <!-- 추가적인 업체 데이터 -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>케이크 사이트 &copy; 2024. 모든 권리 보유.</p>
+    </footer>
+    <script>
+        function showTab(tab) {
+            document.getElementById('userTab').classList.remove('active');
+            document.getElementById('companyTab').classList.remove('active');
+            document.getElementById('userSection').style.display = 'none';
+            document.getElementById('companySection').style.display = 'none';
+
+            if (tab === 'user') {
+                document.getElementById('userTab').classList.add('active');
+                document.getElementById('userSection').style.display = 'block';
+            } else if (tab === 'company') {
+                document.getElementById('companyTab').classList.add('active');
+                document.getElementById('companySection').style.display = 'block';
+            }
+        }
+
+        function filterMembers(type) {
+            if (type === 'user') {
+                const username = document.getElementById('searchByUsername').value.toLowerCase();
+                const rows = document.querySelectorAll('#userTableBody tr');
+                rows.forEach(row => {
+                    const usernameCell = row.cells[1].textContent.toLowerCase();
+                    row.style.display = username && !usernameCell.includes(username) ? 'none' : '';
+                });
+            } else if (type === 'company') {
+                const companyName = document.getElementById('searchByCompanyName').value.toLowerCase();
+                const rows = document.querySelectorAll('#companyTableBody tr');
+                rows.forEach(row => {
+                    const companyCell = row.cells[0].textContent.toLowerCase();
+                    row.style.display = companyName && !companyCell.includes(companyName) ? 'none' : '';
+                });
+            }
+        }
+    </script>
+</body>
+</html>

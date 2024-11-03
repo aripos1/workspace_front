@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>통계 상세 페이지</title>
+    <link rel="stylesheet" href="dashboard_styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #444;
+            color: #fff;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 15px 0;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        .chart-container {
+            margin-bottom: 40px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 20px auto;
+            height: 400px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>통계 상세 페이지</h1>
+        <nav>
+            <a href="main.html">홈</a>
+            <a href="logout.html">로그아웃</a>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- 사이드바 영역 -->
+        <aside class="sidebar">
+            <nav>
+                <a href="order_management.html">주문 관리</a>
+                <a href="product_management.html">상품 관리</a>
+                <a href="shop.html">쇼핑몰 (업체)</a>
+                <a href="statistics_detail.html">통계 상세 페이지</a>
+                <a href="design_management.html">도안 관리</a>
+                <a href="member_list.html">회원 리스트</a>
+            </nav>
+        </aside>
+        <!-- 메인 콘텐츠 영역 -->
+        <main class="main-content">
+            <!-- 총 주문 건수 차트 -->
+            <section class="chart-container">
+                <h2>총 주문 건수</h2>
+                <select id="order-period" onchange="updateChart(orderChart, this.value)">
+                    <option value="month">월별</option>
+                    <option value="week">주별</option>
+                    <option value="day">일별</option>
+                    <option value="year">연도별</option>
+                </select>
+                <canvas id="orderChart"></canvas>
+            </section>
+            <!-- 총 매출 차트 -->
+            <section class="chart-container">
+                <h2>총 매출</h2>
+                <select id="revenue-period" onchange="updateChart(revenueChart, this.value)">
+                    <option value="month">월별</option>
+                    <option value="week">주별</option>
+                    <option value="day">일별</option>
+                    <option value="year">연도별</option>
+                </select>
+                <canvas id="revenueChart"></canvas>
+            </section>
+            <!-- 회원 가입 차트 -->
+            <section class="chart-container">
+                <h2>신규 가입 회원 수</h2>
+                <select id="member-period" onchange="updateChart(newMemberChart, this.value)">
+                    <option value="month">월별</option>
+                    <option value="week">주별</option>
+                    <option value="day">일별</option>
+                    <option value="year">연도별</option>
+                </select>
+                <canvas id="newMemberChart"></canvas>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>케이크 사이트 &copy; 2024. 모든 권리 보유.</p>
+    </footer>
+    <script>
+        const chartData = {
+            month: {
+                labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+                order: [80, 90, 100, 120, 150, 130, 170, 180, 200, 220, 120, 140],
+                revenue: [1000000, 1200000, 1500000, 1800000, 2000000, 2200000, 2500000, 2700000, 3000000, 3200000, 3200000, 3300000],
+                member: [10, 15, 20, 25, 30, 40, 35, 50, 60, 55, 30, 40]
+            },
+            week: {
+                labels: ['1주', '2주', '3주', '4주'],
+                order: [30, 50, 70, 90],
+                revenue: [500000, 700000, 1200000, 1500000],
+                member: [5, 10, 15, 20]
+            },
+            day: {
+                labels: ['월', '화', '수', '목', '금', '토', '일'],
+                order: [10, 15, 20, 25, 30, 35, 40],
+                revenue: [100000, 150000, 200000, 250000, 300000, 350000, 400000],
+                member: [2, 3, 5, 7, 10, 12, 15]
+            },
+            year: {
+                labels: ['2020', '2021', '2022', '2023', '2024'],
+                order: [500, 800, 1000, 1200, 1500],
+                revenue: [10000000, 15000000, 20000000, 25000000, 30000000],
+                member: [100, 150, 200, 250, 300]
+            }
+        };
+
+        function updateChart(chart, period) {
+            const data = chartData[period];
+            chart.data.labels = data.labels;
+            chart.data.datasets[0].data = data[chart.config.data.datasets[0].label.toLowerCase()];
+            chart.update();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // 총 주문 건수 차트
+            const orderCtx = document.getElementById('orderChart').getContext('2d');
+            window.orderChart = new Chart(orderCtx, {
+                type: 'bar',
+                data: {
+                    labels: chartData.month.labels,
+                    datasets: [{
+                        label: 'order',
+                        data: chartData.month.order,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // 총 매출 차트
+            const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+            window.revenueChart = new Chart(revenueCtx, {
+                type: 'line',
+                data: {
+                    labels: chartData.month.labels,
+                    datasets: [{
+                        label: 'revenue',
+                        data: chartData.month.revenue,
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 2,
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // 신규 가입 회원 수 차트
+            const newMemberCtx = document.getElementById('newMemberChart').getContext('2d');
+            window.newMemberChart = new Chart(newMemberCtx, {
+                type: 'bar',
+                data: {
+                    labels: chartData.month.labels,
+                    datasets: [{
+                        label: 'member',
+                        data: chartData.month.member,
+                        backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                        borderColor: 'rgba(153, 102, 255, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

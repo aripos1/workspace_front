@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구매 내역 상세 페이지</title>
+    <link rel="stylesheet" href="dashboard_styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #444;
+            color: #fff;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 15px 0;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        .order-detail {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .order-detail h2 {
+            margin-bottom: 20px;
+        }
+        .order-info {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .order-info div {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .action-buttons button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cancel-button {
+            background-color: #f44336;
+            color: #fff;
+        }
+        .contact-admin-button {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>구매 내역 상세 페이지</h1>
+        <nav>
+            <a href="main.html">홈</a>
+            <a href="logout.html">로그아웃</a>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- 사이드바 영역 -->
+        <aside class="sidebar">
+            <nav>
+                <a href="order_management.html">주문 관리</a>
+                <a href="product_management.html">상품 관리</a>
+                <a href="shop.html">쇼핑몰 (업체)</a>
+                <a href="statistics_detail.html">통계 상세 페이지</a>
+                <a href="design_management.html">도안 관리</a>
+                <a href="member_list.html">회원 리스트</a>
+                <a href="content_management.html">컨텐츠 관리</a>
+            </nav>
+        </aside>
+        <!-- 메인 콘텐츠 영역 -->
+        <main class="main-content">
+            <section class="order-detail">
+                <h2>주문 상세 정보</h2>
+                <div class="order-info">
+                    <div>
+                        <strong>주문 번호:</strong> ORD123456
+                    </div>
+                    <div>
+                        <strong>주문 날짜:</strong> 2024-03-01
+                    </div>
+                    <div>
+                        <strong>배송 상태:</strong> 배송 중
+                    </div>
+                </div>
+                <div class="order-info">
+                    <div>
+                        <strong>상품명:</strong> 케이크 밀가루 5kg
+                    </div>
+                    <div>
+                        <strong>수량:</strong> 2
+                    </div>
+                    <div>
+                        <strong>총 가격:</strong> 10,000원
+                    </div>
+                </div>
+                <!-- 관리자로 취소 요청하기 -->
+                <div class="action-buttons">
+                    <button class="cancel-button" onclick="requestCancellation()">배송 취소 요청</button>
+                    <button class="contact-admin-button" onclick="contactAdmin()">관리자에게 문의</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>케이크 사이트 &copy; 2024. 모든 권리 보유.</p>
+    </footer>
+    <script>
+        function requestCancellation() {
+            alert('배송 취소 요청이 관리자에게 전송되었습니다.');
+        }
+        function contactAdmin() {
+            alert('관리자에게 문의를 요청하였습니다.');
+        }
+    </script>
+</body>
+</html>

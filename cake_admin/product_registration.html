@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +19,9 @@
             }
         }
     </script>
+    
 </head>
+
 <body>
     <header>
         <h1>상품 등록 페이지</h1>
@@ -96,7 +99,8 @@
                     <label for="background-white">흰색</label><br>
                 </div>
                 <input type="text" id="new-cake-background-color" placeholder="새로운 배경 색상 입력">
-                <button type="button" onclick="addOption('new-cake-background-color', 'cake-background-color-container')">추가</button>
+                <button type="button"
+                    onclick="addOption('new-cake-background-color', 'cake-background-color-container')">추가</button>
 
                 <label for="cream-location">크림 위치 (여러 개 선택 가능):</label>
                 <div id="cream-location-container" class="multi-choice-option">
@@ -148,8 +152,18 @@
                 <input type="text" id="new-deco-color" placeholder="새로운 데코 색상 입력">
                 <button type="button" onclick="addOption('new-deco-color', 'deco-color-container')">추가</button>
 
-                <label for="design-pattern">도안 (기본, 도안 번호):</label>
-                <input type="text" id="design-pattern" name="design-pattern" placeholder="예: 기본, 12345">
+                <!-- 도안 선택 부분 -->
+                <label for="design-selection">도안 선택:</label>
+                <select id="design-selection" name="design-selection">
+                    <option value="">도안을 선택하세요</option>
+                </select>
+                <button type="button" onclick="window.location.href='design_registration.html'" style="margin-top: 10px;">
+                    도안 등록하러 가기
+                </button>
+
+                <div id="design-preview" class="preview-box" style="margin-top: 20px;">
+                    <img id="design-preview-img" src="" alt="도안 미리보기" style="max-width: 200px; display: none;">
+                </div>
 
                 <label for="main-product-image">메인 상품 이미지:</label>
                 <input type="file" id="main-product-image" name="main-product-image" accept="image/*">
@@ -169,10 +183,18 @@
                     <label for="pickup">픽업</label><br>
                     <input type="checkbox" id="delivery" name="pickup-method" value="배송">
                     <label for="delivery">배송</label><br>
-                    <input type="checkbox" id="pickup-delivery" name="pickup-method" value="픽업&배송">
-                    <label for="pickup-delivery">픽업&배송</label><br>
                 </div>
-
+                <!-- 미리보기 영역 -->
+                <div class="preview-container">
+                    <h2>미리보기</h2>
+                    <div class="preview-box">
+                        <img id="preview-image" src="" alt="이미지 미리보기">
+                        <h3 id="preview-name">상품명 미리보기</h3>
+                        <p id="preview-category">카테고리: 선택된 카테고리 없음</p>
+                        <p id="preview-price">가격: 입력된 가격 없음</p>
+                        <p id="preview-description">설명: 입력된 설명 없음</p>
+                    </div>
+                </div>
                 <button type="submit" class="button-submit">상품 등록하기</button>
             </form>
         </section>
@@ -181,4 +203,5 @@
         <p>케이크 사이트 &copy; 2024. 모든 권리 보유.</p>
     </footer>
 </body>
+
 </html>
