@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ 챗봇 페이지</title>
+    <link rel="stylesheet" href="dashboard_styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #444;
+            color: #fff;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 15px 0;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        .chatbot {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .chat-window {
+            border: 1px solid #ddd;
+            padding: 15px;
+            height: 300px;
+            overflow-y: scroll;
+            background-color: #f5f5f5;
+            margin-bottom: 15px;
+        }
+        .user-message, .bot-message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .user-message {
+            background-color: #d1e7dd;
+            text-align: right;
+        }
+        .bot-message {
+            background-color: #e2e3e5;
+        }
+        .input-area {
+            display: flex;
+            gap: 10px;
+        }
+        .input-area input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .input-area button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FAQ 챗봇</h1>
+        <nav>
+            <a href="main.html">홈</a>
+            <a href="logout.html">로그아웃</a>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- 사이드바 영역 -->
+        <aside class="sidebar">
+            <nav>
+                <a href="order_management.html">주문 관리</a>
+                <a href="product_management.html">상품 관리</a>
+                <a href="shop.html">쇼핑몰 (업체)</a>
+                <a href="statistics_detail.html">통계 상세 페이지</a>
+                <a href="design_management.html">도안 관리</a>
+                <a href="member_list.html">회원 리스트</a>
+                <a href="content_management.html">컨텐츠 관리</a>
+            </nav>
+        </aside>
+        <!-- 메인 콘텐츠 영역 -->
+        <main class="main-content">
+            <section class="chatbot">
+                <h2>챗봇과 대화하기</h2>
+                <div class="chat-window" id="chatWindow">
+                    <div class="bot-message">안녕하세요! 무엇을 도와드릴까요? FAQ에 대해 질문해 주세요.</div>
+                </div>
+                <div class="input-area">
+                    <input type="text" id="userInput" placeholder="질문을 입력하세요...">
+                    <button onclick="sendMessage()">전송</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>케이크 사이트 &copy; 2024. 모든 권리 보유.</p>
+    </footer>
+    <script>
+        function sendMessage() {
+            const userInput = document.getElementById('userInput').value.trim();
+            if (userInput === '') return;
+            
+            const chatWindow = document.getElementById('chatWindow');
+            const userMessage = document.createElement('div');
+            userMessage.classList.add('user-message');
+            userMessage.innerText = userInput;
+            chatWindow.appendChild(userMessage);
+            
+            // 간단한 FAQ 응답 로직
+            let botResponse = '';
+            if (userInput.includes('연락처') || userInput.includes('카카오톡')) {
+                botResponse = '문의는 카카오 채널을 통해 가능합니다. 카카오 채널 링크: [카카오 채널 링크]';
+            } else if (userInput.includes('배송')) {
+                botResponse = '배송은 결제 완료 후 2-3일 내로 이루어집니다.';
+            } else if (userInput.includes('환불')) {
+                botResponse = '환불은 배송 완료 후 7일 이내에 가능합니다. 자세한 내용은 고객센터로 문의해주세요.';
+            } else {
+                botResponse = '죄송합니다, 해당 질문에 대한 답변을 찾을 수 없습니다. 다른 질문을 해주세요.';
+            }
+            
+            const botMessage = document.createElement('div');
+            botMessage.classList.add('bot-message');
+            botMessage.innerText = botResponse;
+            chatWindow.appendChild(botMessage);
+            
+            // 스크롤을 맨 아래로 
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+            
+            // 입력창 초기화
+            document.getElementById('userInput').value = '';
+        }
+    </script>
+</body>
+</html>
